@@ -13,14 +13,33 @@
 }
 	</style>
 	<link rel="stylesheet" type="text/css" href="design.css">
+	<link rel="stylesheet" type="text/css" href="css/login.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 		<script src="jquery-3.1.1.min.js"></script>
 
 	<script type="text/javascript" src="java4.js"></script>
 </head>
 <body>
+<div class="container">
 
 <input type="text" name="string" id="string">
 <div id="content"></div>
+	<div class="center sm-right">
+		<div class="message">
+			<p>Login</p>
+		</div>		
+		<div class="wrapper">
+			<form class="form">
+				<input type="text" name="username" placeholder="username">
+				<input type="password" name="password" placeholder="password">
+				<input type="submit" name="login" value="login">
+			</form>
+			<div class="container_footer">
+				<p>Don't have account? <a href="signup.php">create account</a></p>
+			</div>
+		</div>
+	</div>
+</div>
 
 </body>
 </html>
