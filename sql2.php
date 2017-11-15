@@ -18,7 +18,7 @@
   	{
 
       include"connect.php";
-      $stmt="SELECT * from `users` where firstname like '%$name%'";
+      $stmt="SELECT  * from `users` where firstname like '%$name%'";
       $result=mysqli_query($conn,$stmt);
 
       $num=mysqli_num_rows($result);
@@ -43,7 +43,7 @@ echo "<td>".$row['firstname']."</td>";
 echo "<td>".$row['lastname']."</td>";
 echo "<td>".$row['duedate']."</td>";
 echo "<td><img src=Images/$row[picture] height=60 width=80></td>";
-echo "<td><button id=edit>Edit</button><button>Delete</button></td>";
+echo "<td><a href=renew.php?id=$row[user_id]><button>Edit</button></a><button>Delete</button></td>";
 
 echo"</tr>";
 
