@@ -17,14 +17,14 @@
   	if(!empty($name))
   	{
 
-      include"connect.php";
-      $stmt="SELECT  * from `users` where firstname like '%$name%'";
+      include"pages/connect.php";
+      $stmt="SELECT * from `users` where firstname like '%$name%'";
       $result=mysqli_query($conn,$stmt);
 
       $num=mysqli_num_rows($result);
 
-      $suffix=($num!=1)?'s':'';
-            echo "<p>your have got ".$num." result".$suffix."<br>";
+      $suffix=($num!=1 && $num!=0)?'s':'';
+            echo "<p style=color:white>your have got ".$num." result".$suffix."<br>";
 echo"<table id=t1><tr><th>id</th>
                 <th>firstname</th>
                 <th>lastname</th>
@@ -51,7 +51,7 @@ echo"</tr>";
       echo"</table>";
       if($num<1)
       {
-        echo"<p align=center>couldnt found it</p>";
+        echo"<p id=error style=color:white>Invalid username! sorry couldnt found it</p>";
       }
    
   }
