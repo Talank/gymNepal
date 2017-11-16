@@ -16,7 +16,7 @@
 				$error_msg="";
 				$_SESSION['username']= $username;
 				//echo "okay";
-				header("location:../index.html?login=success");
+				header("location:../search.html");
 			 //redirect_to("../index.php?login=success");
 			}
 			else{

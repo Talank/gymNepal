@@ -44,8 +44,8 @@ body{
 	background-image: url('../Images/login_bg1.jpg');        
     background-repeat: no-repeat;        
     position: relative;        
-    width: 85%;            
-    height: 610px;       
+    /*width: 85%;            
+    height: 610px; */      
     margin-left: auto;      
     margin-right: auto;     
 }

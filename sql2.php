@@ -6,6 +6,13 @@
   <title></title>
 </head>
 <body>
+  <script type="text/javascript" >
+    function imageChange(){
+      alert("a");
+      document.getElementsById("img").src="Images/tick.png";
+}
+  </script>
+
 
 <?php 
 
@@ -43,7 +50,7 @@ echo "<td>".$row['firstname']."</td>";
 echo "<td>".$row['lastname']."</td>";
 echo "<td>".$row['duedate']."</td>";
 echo "<td><img src=Images/$row[picture] height=60 width=80></td>";
-echo "<td><a href=renew.php?id=$row[user_id]><button>Edit</button></a><button>Delete</button></td>";
+echo "<td><a href=renew.php?id=$row[user_id]><button>Edit</button></a><a href=attend.php?id=$row[user_id]><button><img src=Images/tick.png width=17 height=17 id=img></button></a></td>";
 
 echo"</tr>";
 
