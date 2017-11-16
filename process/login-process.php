@@ -1,6 +1,12 @@
 <?php 
 	session_start();
 
+	//making a redirect to function. we may need to declear this function in other file just like connect.php for better code reusability
+	function redirect_to($new_location){
+        header("Location: ".$new_location);
+        exit();
+    }
+
 	include_once('../pages/connect.php');
 	if (isset($_POST['login'])) {
 		$username = $conn->real_escape_string($_POST['username']);
@@ -16,17 +22,18 @@
 				$error_msg="";
 				$_SESSION['username']= $username;
 				//echo "okay";
-				header("location:../index.html?login=success");
-			 //redirect_to("../index.php?login=success");
+				// header("location:../index.html?login=success");
+			 redirect_to("../index.php?login=success");
 			}
 			else{
-			
-				header("location:../index.html?password_wrong");
+				redirect_to("../index.php?password_wrong");
+				//header("location:../index.html?password_wrong");
 			}
 		}
 
 		else{
-			header("location:../index.html?username_not_found");
+			redirect_to("../index.php?username_not_found");
+			//header("location:../index.html?username_not_found");
 		}
 	}
 
