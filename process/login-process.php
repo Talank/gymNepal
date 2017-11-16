@@ -15,15 +15,18 @@
 			if ($password == ($row['password'])) {
 				$error_msg="";
 				$_SESSION['username']= $username;
-			redirect_to("../index.php?login=success");
+				//echo "okay";
+				header("location:../index.html?login=success");
+			 //redirect_to("../index.php?login=success");
 			}
 			else{
-				redirect_to("../index.php?password_wrong");
+			
+				header("location:../index.html?password_wrong");
 			}
 		}
 
 		else{
-			redirect_to("../index.php?username_not_found");
+			header("location:../index.html?username_not_found");
 		}
 	}
 
