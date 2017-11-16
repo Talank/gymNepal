@@ -1,8 +1,11 @@
 <?php
 include"connect.php";
 $user_id=$_GET['id'];
+date_default_timezone_set('GMT+5.45');
+
  $date=date("Y/m/d");
 $time=date("h:i:s");
+
  $clock=date("a");
 
 

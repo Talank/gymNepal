@@ -11,7 +11,10 @@
       alert("a");
       document.getElementsById("img").src="Images/tick.png";
 }
+function changeColor(){
+  document.getElementById('color').style.color = "magenta";
   </script>
+}
 
 
 <?php 
@@ -25,7 +28,8 @@
   	{
 
       include"pages/connect.php";
-      $stmt="SELECT * from `users` where firstname like '%$name%'";
+      $stmt=" SELECT *,datediff(duedate,now()) as count from `users`  where firstname like '%$name%'";
+      //$stmt="SELECT * from `users` where firstname like '%$name%'";
       $result=mysqli_query($conn,$stmt);
 
       $num=mysqli_num_rows($result);
@@ -36,6 +40,7 @@ echo"<table id=t1><tr><th>id</th>
                 <th>firstname</th>
                 <th>lastname</th>
                 <th>duedate</th>
+                <th>plan</th>
                 <th>Dp</th>
                 <th>Update</tr>";
 
@@ -44,11 +49,13 @@ echo"<table id=t1><tr><th>id</th>
      {
 //echo "<br><section>"."name-"$row['item_name']."price-".$row['price']."code".$row['item_code']."</section><br>";
 //echo $row['information'];
+      
 echo"<tr>";
 echo "<td>" .$row['user_id']."</td>";
 echo "<td>".$row['firstname']."</td>";
 echo "<td>".$row['lastname']."</td>";
-echo "<td>".$row['duedate']."</td>";
+echo "<td id=color>".$row['duedate']."</td>";
+echo "<td>".$row['count']."</td>";
 echo "<td><img src=Images/$row[picture] height=60 width=80></td>";
 echo "<td><a href=renew.php?id=$row[user_id]><button>Edit</button></a><a href=attend.php?id=$row[user_id]><button><img src=Images/tick.png width=17 height=17 id=img></button></a></td>";
 
