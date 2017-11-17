@@ -46,7 +46,7 @@ echo"<table id=t1><tr><th align=center>id</th>
                 <th>occupation</th>
                 <th>R.day</th>
                 <th>Dp</th>
-                <th>Update</tr>";
+                <th>Action</tr>";
 
 
       while($row=mysqli_fetch_array($result))
@@ -64,8 +64,12 @@ echo "<td >".$row['dob']."</td>";
 echo "<td >".$row['temporay_address']."</td>";
 echo "<td >".$row['occupation']."</td>";
 
-
+if($row['count']>0){
  echo "<td id=color>".$row['count']."</td>";
+}
+else{
+  echo "<td>finished</td>";
+}
 echo "<td><img src=Images/$row[picture] height=60 width=80></td>";
 echo "<td><a href=renew.php?id=$row[user_id]><button style=width:auto;margin-left: 10px;>Edit</button></a><a href=attend.php?id=$row[user_id]><button style=width:auto;margin-left: 10px;><img src=Images/tick.png width=17 height=17 id=img></button></a></td>";
 
