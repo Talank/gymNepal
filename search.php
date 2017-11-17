@@ -1,3 +1,4 @@
+<meta name="viewport" content="width=device-width, initial-scale=0.9">
 <?php 
 session_start();
 if(isset($_SESSION['username'])){
