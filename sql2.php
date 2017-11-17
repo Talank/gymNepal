@@ -12,7 +12,7 @@
       document.getElementsById("img").src="Images/tick.png";
 }
 function changeColor(){
-  document.getElementById('color').style.color = "magenta";
+  document.getElementById('td1').style.color = "magenta";
   </script>
 }
 
@@ -40,7 +40,7 @@ echo"<table id=t1><tr><th>id</th>
                 <th>firstname</th>
                 <th>lastname</th>
                 <th>duedate</th>
-                <th>plan</th>
+                <th>R day</th>
                 <th>Dp</th>
                 <th>Update</tr>";
 
@@ -54,8 +54,10 @@ echo"<tr>";
 echo "<td>" .$row['user_id']."</td>";
 echo "<td>".$row['firstname']."</td>";
 echo "<td>".$row['lastname']."</td>";
-echo "<td id=color>".$row['duedate']."</td>";
-echo "<td>".$row['count']."</td>";
+echo "<td >".$row['duedate']."</td>";
+
+
+ echo "<td id=color>".$row['count']."</td>";
 echo "<td><img src=Images/$row[picture] height=60 width=80></td>";
 echo "<td><a href=renew.php?id=$row[user_id]><button>Edit</button></a><a href=attend.php?id=$row[user_id]><button><img src=Images/tick.png width=17 height=17 id=img></button></a></td>";
 

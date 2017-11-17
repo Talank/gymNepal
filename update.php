@@ -9,7 +9,7 @@ if($result){
 	$message="Date is now updated to ".$duedate."";
 	
 	echo "<script type='text/javascript'>alert('$message');</script>";
-	header("location:index.html");
+	header("location:search.php");
 }
 else{
 	echo "error";

@@ -12,7 +12,7 @@ $time=date("h:i:s");
 $stmt="INSERT into attendance(user_id,date,time,clock) values ($user_id,'$date','$time','$clock')";
 $result=mysqli_query($conn,$stmt);
 if($result){
-  header("location:search.html");
+  header("location:search.php");
 }
 else{
 	echo "sorry error!";
