@@ -17,7 +17,7 @@
 
       $suffix=($num!=1)?'s':'';
             echo "<p>your have got ".$num." result".$suffix."<br>";
-echo"<table width=100%><tr><th>id</th>
+echo"<table width=100% ><tr><th>id</th>
                 <th>firstname</th>
                 <th>lastname</th>
                 <th>duedate</th>

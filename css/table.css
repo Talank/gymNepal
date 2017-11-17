@@ -1,11 +1,12 @@
 #t1{
 	 font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     border-collapse: collapse;
-    width: 100%;
+    width: 250%;
+    padding: 24px;
     
 }
 #t1 th{
-	 padding-top: 12px;
+	 padding-top: 10px;
     padding-bottom: 12px;
     text-align: left;
     background-color: #4CAF50;

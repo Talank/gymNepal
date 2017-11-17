@@ -28,7 +28,7 @@ function changeColor(){
   	{
 
       include"pages/connect.php";
-      $stmt=" SELECT *,datediff(duedate,now()) as count from `users`  where firstname like '%$name%'";
+      $stmt=" SELECT *,datediff(duedate,now()) as count from `users`,`information`  where users.firstname like '%$name%' and information.user_id=users.user_id";
       //$stmt="SELECT * from `users` where firstname like '%$name%'";
       $result=mysqli_query($conn,$stmt);
 
@@ -36,11 +36,15 @@ function changeColor(){
 
       $suffix=($num!=1 && $num!=0)?'s':'';
             echo "<p style=color:white>your have got ".$num." result".$suffix."<br>";
-echo"<table id=t1><tr><th>id</th>
+echo"<table id=t1><tr><th align=center>id</th>
                 <th>firstname</th>
                 <th>lastname</th>
                 <th>duedate</th>
-                <th>R day</th>
+                <th>phone</th>
+                <th>dob</th>
+                <th>address</th>
+                <th>occupation</th>
+                <th>R.day</th>
                 <th>Dp</th>
                 <th>Update</tr>";
 
@@ -55,11 +59,15 @@ echo "<td>" .$row['user_id']."</td>";
 echo "<td>".$row['firstname']."</td>";
 echo "<td>".$row['lastname']."</td>";
 echo "<td >".$row['duedate']."</td>";
+echo "<td >".$row['phone']."</td>";
+echo "<td >".$row['dob']."</td>";
+echo "<td >".$row['temporay_address']."</td>";
+echo "<td >".$row['occupation']."</td>";
 
 
  echo "<td id=color>".$row['count']."</td>";
 echo "<td><img src=Images/$row[picture] height=60 width=80></td>";
-echo "<td><a href=renew.php?id=$row[user_id]><button>Edit</button></a><a href=attend.php?id=$row[user_id]><button><img src=Images/tick.png width=17 height=17 id=img></button></a></td>";
+echo "<td><a href=renew.php?id=$row[user_id]><button style=width:auto;margin-left: 10px;>Edit</button></a><a href=attend.php?id=$row[user_id]><button style=width:auto;margin-left: 10px;><img src=Images/tick.png width=17 height=17 id=img></button></a></td>";
 
 echo"</tr>";
 
