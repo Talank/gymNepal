@@ -1,4 +1,4 @@
-<meta name="viewport" content="width=device-width, initial-scale=0.9">
+<meta name="viewport" content="width=device-width, initial-scale=1.3">
 <?php 
 session_start();
 if(isset($_SESSION['username'])){
@@ -33,8 +33,19 @@ else{
 
 	<script type="text/javascript" src="java4.js"></script>
 </head>
-<body style="background: black">
+<body>
 	<h1 align="center" style="color:white;font-style: italic;">Pokhara Gym house</h1>
+
+
+<!-- ************************ Navigation bar code goes here****************************** -->
+  <nav>
+    <div class="nav">
+      <a href="pages/view-users.php" class="text-center text-sm-right">View Users</a>
+      <a href="#" class="text-center text-sm-right">Report</a>
+      <a href="#" class="text-center text-sm-right">About Gym</a>
+    </div>
+  </nav>
+
 	<button  onclick="document.getElementById('id01').style.display='block'" style="width:auto;margin-left: 10px;">Register</button>
 	<a href="process/logout.php"><button style="width: auto;">logout</button></a>
 <input type="text" name="string" id="string" placeholder="Search by name">
