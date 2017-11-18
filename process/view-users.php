@@ -5,8 +5,8 @@
 </head>
 <body>
 	<form action="show-users.php" method="post">
-<label>Initial date:<input type="date" name="date1"></label>
-<label>Final date:<input type="date" name="date2"></label>
+<label>Initial date:<input type="date" name="date1" required></label>
+<label>Final date:<input type="date" name="date2" required></label>
 <button>go</button>
 </form>
 

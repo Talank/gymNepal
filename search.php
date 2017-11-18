@@ -40,7 +40,7 @@ else{
 <!-- ************************ Navigation bar code goes here****************************** -->
   <nav>
     <div class="nav">
-      <a href="pages/view-users.php" class="text-center text-sm-right">View Users</a>
+      <a href="process/view-users.php" class="text-center text-sm-right">View Users</a>
       <a href="#" class="text-center text-sm-right">Report</a>
       <a href="#" class="text-center text-sm-right">About Gym</a>
     </div>
@@ -48,7 +48,6 @@ else{
 
 	<button  onclick="document.getElementById('id01').style.display='block'" style="width:auto;margin-left: 10px;">Register</button>
 	<a href="process/logout.php"><button style="width: auto;">logout</button></a>
-  <a href="process/view-users.php"><button style="width: auto;">New users</button></a>
 <input type="text" name="string" id="string" placeholder="Search by name">
 <div id="content"></div>
 
