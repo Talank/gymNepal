@@ -40,8 +40,6 @@ else{
 <input type="text" name="string" id="string" placeholder="Search by name">
 <div id="content"></div>
 
-
-
 <div id="id01" class="modal">
   <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">×</span>
   <form class="modal-content animate" action="process/form-process.php" method="post" enctype="multipart/form-data">

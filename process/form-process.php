@@ -14,17 +14,17 @@
  $image=$_FILES["fileToUpload"]["name"];
 
  include"../connect.php";
- $stmt="INSERT into `users` values('','$firstname','$lastname','$plan','$image')";
- $stmt2="INSERT into `information` values('',$phone,'$dob','$temp_address','$perm_address','$occupation')";
+ $stmt="INSERT into users values('','$firstname','$lastname','$plan','$image')";
+ $stmt2="INSERT into information values('',$phone,'$dob','$temp_address','$perm_address','$occupation')";
 
    $result=mysqli_query($conn,$stmt);
    $result2=mysqli_query($conn,$stmt2);
 
    if($result && $result2){
-   	header("location:../search.php");
+    header("location:../search.php");
    }
    else{
-   	echo "sorry";
+    echo "sorry";
    }
 
 
