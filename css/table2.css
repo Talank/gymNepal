@@ -1,0 +1,39 @@
+#t1{
+	 font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    padding: 24px;
+    
+}
+#t1 th{
+	 padding-top: 10px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+}
+#t1 th{
+	nth-child(even){background-color: #f2f2f2;}
+}
+#t1 tr:hover{
+	background-color: lightblue;
+     color: white;
+
+}
+#t1 td{
+    color: white;
+}
+#error{
+    text-align: center;
+    color: white;
+}
+
+body{
+    background-image: url('../Images/login_bg1.jpg');        
+    background-repeat: no-repeat;        
+    position: relative;        
+    /*width: 85%;            
+    height: 610px; */      
+    margin-left: auto;      
+    margin-right: auto;     
+}

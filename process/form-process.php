@@ -11,10 +11,11 @@
  $perm_address=$_POST['perm_address'];
  $occupation=$_POST['occupation'];
  $plan=$_POST['plan'];
+ $issue=$_POST['issue'];
  $image=$_FILES["fileToUpload"]["name"];
 
  include"../connect.php";
- $stmt="INSERT into users values('','$firstname','$lastname','$plan','$image')";
+ $stmt="INSERT into users values('','$firstname','$lastname','$plan','$issue','$image')";
  $stmt2="INSERT into information values('',$phone,'$dob','$temp_address','$perm_address','$occupation')";
 
    $result=mysqli_query($conn,$stmt);

@@ -37,6 +37,7 @@ else{
 	<h1 align="center" style="color:white;font-style: italic;">Pokhara Gym house</h1>
 	<button  onclick="document.getElementById('id01').style.display='block'" style="width:auto;margin-left: 10px;">Register</button>
 	<a href="process/logout.php"><button style="width: auto;">logout</button></a>
+  <a href="process/view-users.php"><button style="width: auto;">New users</button></a>
 <input type="text" name="string" id="string" placeholder="Search by name">
 <div id="content"></div>
 
@@ -64,6 +65,9 @@ else{
 
       <label><b class="b1">Plan</b></label><br><br>
       <input type="date" placeholder="Plan" name="plan" required><br><br>
+
+      <label><b class="b1">Issue date</b></label><br><br>
+      <input type="date" placeholder="issue date" name="issue" required><br><br>
 
       <label><b class="b1">Occupation</b></label>
       <input type="text" placeholder="occupation" name="occupation" required>
