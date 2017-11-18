@@ -38,7 +38,6 @@ else{
 
 
 <!-- ************************ Navigation bar code goes here****************************** -->
-  <nav>
     <div class="nav">
     
       <div class="dropLink1">
@@ -46,7 +45,7 @@ else{
         </button>
         <div class="dropdown-content1">
           <a href="process/view-users.php">view by date</a>
-          <a href="#">view by name</a>
+          <a href="#">view by address</a>
         </div>
       </div>
       
@@ -59,7 +58,6 @@ else{
       </div>
       
     </div>
-  </nav>
 
 	<button  onclick="document.getElementById('id01').style.display='block'" style="width:auto;margin-left: 10px;">Register</button>
 	<a href="process/logout.php"><button style="width: auto;">logout</button></a>

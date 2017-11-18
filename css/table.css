@@ -1,9 +1,9 @@
-nav{
+/*nav{
     padding-left: 30%; 
     padding-bottom: 20px;
     width: 70%;
     float: right;
-}
+}*/
 
 .nav{
     position: relative;
@@ -12,6 +12,24 @@ nav{
     height: 60px;
     background-color: #212a34;
     /*text-align: center;*/
+}
+
+.dropLink1 {
+    left: 5px;
+    position: absolute;
+    /*left: 100px;*/
+}
+
+.dropLink2 {
+    left: 43%;
+    position: absolute;
+    /*left: 400px;*/
+}
+
+.dropLink3 {
+    position: absolute;
+    right: 5px; 
+   /* left: 700px;*/
 }
 
 .nav a {
@@ -23,6 +41,10 @@ nav{
     padding-bottom: 10px;   
 }
 
+.nav a:hover{
+    font-size: 27.5px;
+}
+
 .nav button {
     font-family: Modesto,Helvetica,Rockwell,Bobber;
     text-decoration: none;
@@ -32,19 +54,8 @@ nav{
     margin-top: 1px;  
 }
 
-.dropLink3 {
-    position: absolute;
-    left: 700px;
-}
-
-.dropLink2 {
-    position: absolute;
-    left: 400px;
-}
-
-.dropLink1 {
-    position: absolute;
-    left: 100px;
+.nav button:hover{
+    font-size: 27.5px;
 }
 
 /* Dropdown button */
@@ -61,7 +72,7 @@ nav{
     top: 60px;
     position: absolute;
     background-color: #f9f9f9;
-    min-width: 200px;
+    min-width: 300px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
 }
@@ -72,11 +83,13 @@ nav{
     padding: 12px 16px;
     text-decoration: none;
     display: block;
+    font-size: 20px;
 }
 
 .dropdown-content1 a:hover {
     background-color: #000;
     color: #fff;
+    font-size: 24px;
 }
 
 /* Show the dropdown menu on hover */
@@ -127,4 +140,46 @@ body{
     height: 610px; */      
     margin-left: auto;      
     margin-right: auto;     
+}
+
+
+/*****************For making it responsive in mobile view*******************/
+@media screen and (max-width: 500px){
+    .nav a {
+        font-size: 18px; 
+        padding-bottom: 10px;   
+    }
+
+    .nav a:hover{
+        font-size: 20px;
+    }
+
+    .nav button {
+        font-size: 19px;  
+        padding-bottom: 8px;
+         
+    }
+
+    .nav button:hover{
+        font-size: 20px;
+    }
+
+    /* Dropdown Content (Hidden by Default) */
+    .dropdown-content1 {
+        min-width: 150px;
+    }
+
+    /* Links inside the dropdown */
+    .dropdown-content1 a {
+        font-size: 14px;
+    }
+
+    .dropdown-content1 a:hover {
+        font-size: 16px;
+    }
+
+    /* Show the dropdown menu on hover */
+    .dropLink1:hover .dropdown-content1 {
+      display: block;
+    }
 }
