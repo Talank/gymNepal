@@ -1,4 +1,4 @@
-<meta name="viewport" content="width=device-width, initial-scale=1.3">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <?php 
 session_start();
 if(isset($_SESSION['username'])){
@@ -40,9 +40,24 @@ else{
 <!-- ************************ Navigation bar code goes here****************************** -->
   <nav>
     <div class="nav">
-      <a href="process/view-users.php" class="text-center text-sm-right">View Users</a>
-      <a href="#" class="text-center text-sm-right">Report</a>
-      <a href="#" class="text-center text-sm-right">About Gym</a>
+    
+      <div class="dropLink1">
+        <button class="dropbtn">view users 
+        </button>
+        <div class="dropdown-content1">
+          <a href="process/view-users.php">view by date</a>
+          <a href="#">view by name</a>
+        </div>
+      </div>
+      
+      <div class="dropLink2">
+        <a href="#">Report</a>
+      </div>
+      
+      <div>
+        <a href="#" class="dropLink3">About Gym</a>
+      </div>
+      
     </div>
   </nav>
 
