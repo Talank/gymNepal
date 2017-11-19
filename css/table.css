@@ -103,20 +103,24 @@
 }*/
 
 #t1{
-     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    position: relative;
+    text-align: center;
+    top: 30%;
+    margin: 0 auto;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     border-collapse: collapse;
-    width: 250%;
+    width: 90%;
     padding: 24px;
-    
 }
 #t1 th{
-     padding-top: 10px;
+    text-align: center;
+    padding-top: 10px;
     padding-bottom: 12px;
     text-align: left;
     background-color: #4CAF50;
     color: white;
 }
-#t1 th{
+#t1 td{
     nth-child(even){background-color: #f2f2f2;}
 }
 #t1 tr:hover{
