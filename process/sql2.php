@@ -9,7 +9,7 @@
   <script type="text/javascript" >
     function imageChange(){
       alert("a");
-      document.getElementsById("img").src="Images/tick.png";
+      document.getElementsById("img").src="../Images/tick.png";
 }
 function changeColor(){
   document.getElementById('td1').style.color = "magenta";
