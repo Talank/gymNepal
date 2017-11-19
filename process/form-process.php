@@ -13,6 +13,22 @@
  $plan=$_POST['plan'];
  $issue=$_POST['issue'];
  $image=$_FILES["fileToUpload"]["name"];
+ $today=date('Y-m-d');
+ $date=date_create($today);
+
+if ($plan == 1) {
+  date_add($date,date_interval_create_from_date_string("1 months"));
+}
+else if($plan ==3){
+  date_add($date,date_interval_create_from_date_string("3 months"));
+}
+else if($plan==6){
+  date_add($date,date_interval_create_from_date_string("6 months"));
+}
+else{
+  date_add($date,date_interval_create_from_date_string("12 months"));
+}
+$plan=date_format($date,"Y-m-d");
 
  include"../pages/connect.php";
  $stmt="INSERT into users values('','$firstname','$lastname','$plan','$issue','$image')";

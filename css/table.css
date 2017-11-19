@@ -103,29 +103,38 @@
 }*/
 
 #t1{
-     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    position: relative;
+    left: 45%;
+    text-align: center;
+    top: 30%;
+    margin: 0 auto;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     border-collapse: collapse;
-    width: 250%;
+    width: 150%;
     padding: 24px;
-    
 }
 #t1 th{
-     padding-top: 10px;
+    left: 10px;
+    text-align: center;
+    padding-top: 10px;
     padding-bottom: 12px;
     text-align: left;
-    background-color: #4CAF50;
+    background-color: #263238;
     color: white;
+    padding-left: 50px;
+
 }
-#t1 th{
-    nth-child(even){background-color: #f2f2f2;}
+#t1 tr:nth-child(even){
+    background-color: #f2f2f2;
 }
 #t1 tr:hover{
     background-color: lightblue;
-     color: white;
+     
 
 }
 #t1 td{
-    color: white;
+    color: black;
+
 }
 #error{
     text-align: center;
@@ -133,7 +142,7 @@
 }
 
 body{
-    background-image: url('../Images/bg_wooden.jpg');        
+    background-color: #FAFAFA;        
     background-repeat: no-repeat;        
     position: relative;        
     /*width: 85%;            
