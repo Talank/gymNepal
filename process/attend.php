@@ -1,5 +1,5 @@
 <?php
-include"connect.php";
+include"../pages/connect.php";
 $user_id=$_GET['id'];
 date_default_timezone_set('Asia/Kathmandu');
 

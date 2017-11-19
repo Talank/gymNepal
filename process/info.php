@@ -1,7 +1,7 @@
 
 <?php
 $id=$_POST['id'];
-include"connect.php";
+include"../pages/connect.php";
 $stmt="SELECT * from `information` where user_id=$id";
 
 $result=mysqli_query($conn,$stmt);

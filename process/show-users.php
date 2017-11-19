@@ -29,7 +29,7 @@
 <?php
  $date1=$_POST['date1'];
  $date2=$_POST['date2'];
- include"../connect.php";
+ include"../pages/connect.php";
  $stmt="SELECT * from `users` where issue_date between '$date1' and '$date2'";
  $result=mysqli_query($conn,$stmt);
   $num=mysqli_num_rows($result);

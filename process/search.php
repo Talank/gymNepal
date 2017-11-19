@@ -5,14 +5,14 @@ if(isset($_SESSION['username'])){
 
 }
 else{
-	header("location:index.html");
+	header("location:../index.html");
 }
 
 ?>
 <html>
 <head>
 	<title>Bulls gym</title>
-	<link rel="shortcut icon" href="Images/bulls.png" />
+	<link rel="shortcut icon" href="../Images/bulls.png" />
 	<style type="text/css">
 
 #content {
@@ -25,13 +25,13 @@ else{
 }
 
 	</style>
-	<link rel="stylesheet" type="text/css" href="css/table.css">
-	<link rel="stylesheet" type="text/css" href="css/form.css">
+	<link rel="stylesheet" type="text/css" href="../css/table.css">
+	<link rel="stylesheet" type="text/css" href="../css/form.css">
 
-		<script src="jquery-3.1.1.min.js"></script>
-		<script type="text/javascript" src="javascript/form.js"></script>
+		<script src="../jquery-3.1.1.min.js"></script>
+		<script type="text/javascript" src="../javascript/form.js"></script>
 
-	<script type="text/javascript" src="java4.js"></script>
+	<script type="text/javascript" src="../java4.js"></script>
 </head>
 <body>
 	<h1 align="center" style="color:white;font-style: italic;">Pokhara Gym house</h1>
@@ -44,7 +44,7 @@ else{
         <button class="dropbtn">view users 
         </button>
         <div class="dropdown-content1">
-          <a href="process/view-users.php">view by date</a>
+          <a href="view-users.php">view by date</a>
           <a href="#">view by address</a>
         </div>
       </div>
@@ -60,13 +60,13 @@ else{
     </div>
 
 	<button  onclick="document.getElementById('id01').style.display='block'" style="width:auto;margin-left: 10px;">Register</button>
-	<a href="process/logout.php"><button style="width: auto;">logout</button></a>
-<input type="text" name="string" id="string" placeholder="Search by name">
+	<a href="logout.php"><button style="width: auto;">logout</button></a>
+<input type="text" name="string" id="string" placeholder="Search by name or id....">
 <div id="content"></div>
 
 <div id="id01" class="modal">
   <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">×</span>
-  <form class="modal-content animate" action="process/form-process.php" method="post" enctype="multipart/form-data">
+  <form class="modal-content animate" action="form-process.php" method="post" enctype="multipart/form-data">
     <div class="container">
       <label><b class="b1">Firstname</b></label>
       <input type="text" placeholder="firstname" name="firstname" required>
@@ -100,7 +100,7 @@ else{
 
       <div class="clearfix">
         <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-        <button type="submit" class="signupbtn" name="submit">Sign Up</button>
+        <button type="submit" class="signupbtn" name="submit">Register</button>
       </div>
     </div>
   </form>

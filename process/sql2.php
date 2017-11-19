@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" type="text/css" href="css/table.css">
+  <link rel="stylesheet" type="text/css" href="../css/table.css">
   <title></title>
 </head>
 <body>
@@ -27,7 +27,7 @@ function changeColor(){
   	if(!empty($name))
   	{
 
-      include"pages/connect.php";
+      include"../pages/connect.php";
       $stmt=" SELECT *,datediff(duedate,now()) as count from `users`,`information`  where (users.firstname like '%$name%' ||users.user_id like '%$name%') and information.user_id=users.user_id";
       //$stmt="SELECT * from `users` where firstname like '%$name%'";
       $result=mysqli_query($conn,$stmt);
@@ -70,8 +70,8 @@ if($row['count']>0){
 else{
   echo '<td style="color: red;">finished</td>';
 }
-echo "<td><img src=Images/$row[picture] height=60 width=80></td>";
-echo "<td><a href=renew.php?id=$row[user_id]><button style=width:auto;margin-left: 10px;>Edit</button></a><a href=attend.php?id=$row[user_id]><button style=width:auto;margin-left: 10px;><img src=Images/tick.png width=17 height=17 id=img></button></a></td>";
+echo "<td><img src=../Images/$row[picture] height=60 width=80></td>";
+echo "<td><a href=renew.php?id=$row[user_id]><button style=width:auto;margin-left: 10px;>Edit</button></a><a href=attend.php?id=$row[user_id]><button style=width:auto;margin-left: 10px;><img src=../Images/tick.png width=17 height=17 id=img></button></a></td>";
 
 echo"</tr>";
 
