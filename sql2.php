@@ -28,7 +28,7 @@ function changeColor(){
   	{
 
       include"pages/connect.php";
-      $stmt=" SELECT *,datediff(duedate,now()) as count from `users`,`information`  where users.firstname like '%$name%' and information.user_id=users.user_id";
+      $stmt=" SELECT *,datediff(duedate,now()) as count from `users`,`information`  where (users.firstname like '%$name%' ||users.user_id like '%$name%') and information.user_id=users.user_id";
       //$stmt="SELECT * from `users` where firstname like '%$name%'";
       $result=mysqli_query($conn,$stmt);
 
