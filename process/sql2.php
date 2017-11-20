@@ -29,9 +29,7 @@
                 <th>Name</th>
                 <th>address</th>
                 <th>R.day</th>
-                
                 <th>Action</tr>";
-
 
       while($row=mysqli_fetch_array($result))
      {
@@ -50,8 +48,20 @@
         else{
           echo '<td style="color: red;">finished</td>';
         }
-        
-        echo "<td><a href=renew.php?id=$row[user_id]><button style=width:auto;margin-left: 10px;>Edit</button></a><a href=attend.php?id=$row[user_id]><button style=width:auto;margin-left: 10px;><img src=../Images/tick.png width=17 height=17 id=img></button></a></td>";
+
+        echo "<td>
+                <a href=renew.php?id=$row[user_id]>
+                  <button class='edit_btn'>
+                    Edit
+                  </button>
+                </a>
+
+                <a href=attend.php?id=$row[user_id]>
+                  <button class='tick_mark'>
+                    <img src=../Images/tick.png id=img>
+                  </button>
+                </a>
+              </td>";
 
         echo"</tr>";
 
