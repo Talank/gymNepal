@@ -27,8 +27,8 @@
 	
     <div id="div2" hidden>
     	<input name="user_id" value="<?php echo $_GET['id'];?>" hidden>
-    	<input type="text" placeholder="Firstname" name="firstname">
-    	<input type="text" placeholder="Lastname" name="lastname">
+    	<input type="text" placeholder="Firstname" name="firstname" value="<?php echo $row['firstname'];?>" required>
+    	<input type="text" placeholder="Lastname" name="lastname" value="<?php echo $row['lastname'];?>" required>
     </div>
 	<br><br>
 	
