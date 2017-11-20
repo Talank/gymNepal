@@ -13,18 +13,6 @@ else{
 <head>
 	<title>Bulls gym</title>
 	<link rel="shortcut icon" href="../Images/bulls.png" />
-	<style type="text/css">
-
-#content {
-	background-color: transparent;
-
-	background-size: 2em;
-	width:40%;
-	height: 20%;
-
-}
-
-	</style>
 	<link rel="stylesheet" type="text/css" href="../css/table.css">
 	<link rel="stylesheet" type="text/css" href="../css/form.css">
 
