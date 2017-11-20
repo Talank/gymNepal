@@ -151,12 +151,13 @@ body{
 .edit_btn{
     width:auto;
     float: left;
-    min-width: 20px;
+    min-width: 16px;
     padding-top: 16px;
     padding-bottom: 10px;
     margin-bottom: 5px;
     font-size: 16px;
     left: 50px;
+    padding-left: 10px;
     margin-left: 15%;
 }
 
@@ -166,7 +167,10 @@ body{
     margin-right: 15%;
 }
 
-
+.tick_mark #img{
+     width: 18px;
+     height: 16px;
+}
 /*****************For making it responsive in mobile view*******************/
 @media screen and (max-width: 500px){
     .nav{

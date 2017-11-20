@@ -12,7 +12,8 @@
 	include"../pages/connect.php";
 	$user_id=$_GET['id'];
 	$stmt="select firstname,lastname,duedate,picture,count(*) as value from users,attendance where users.user_id=attendance.user_id and users.user_id=$user_id";
-	$result=mysqli_query($conn,$stmt);
+	$result=mysqli_query($conn,$stmt)
+			or die("Error : Sorry ! can not execute the process");
 	$row=mysqli_fetch_array($result);
 
 	?>
