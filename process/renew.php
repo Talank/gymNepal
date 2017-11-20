@@ -34,8 +34,9 @@
 	
     <b>Attendance:<?php echo $row['value']; ?></b><br><br>
     <label><b>NEW DATE:</b><input type="date" id="myDate" value=<?php echo $row['duedate']; ?> name="date"></label><br>
-	<button style="margin-left: 10px;">update</button>
+	<button style="margin-left: 10px;"><b>update</b></button>
 	</form>
+	<a href="search.php"><input type="button" value="back"></a>
 </div>
 </body>
 </html>
