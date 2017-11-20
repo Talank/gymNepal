@@ -8,28 +8,26 @@
 .nav{
     position: relative;
     margin: 0 auto;
-    width: 100%;
+    width: 75%;
     height: 64px;
     background-color: #212a34;
     /*text-align: center;*/
 }
 
 .dropLink1 {
-    left: 5px;
+    left: 15px;
     position: absolute;
     /*left: 100px;*/
 }
 
 .dropLink2 {
-    left: 43%;
+    left: 45%;
     position: absolute;
-    /*left: 400px;*/
 }
 
 .dropLink3 {
     position: absolute;
-    right: 5px; 
-   /* left: 700px;*/
+    right: 15px; 
 }
 
 .nav a {
@@ -51,6 +49,7 @@
     color: #fff;
     font-size: 25px;  
     padding-bottom: 10px;
+    padding-left: 0px;
     margin-top: 1px;  
 }
 
@@ -97,14 +96,9 @@
   display: block;
 }
 
-/* Show the dropdown menu on hover */
-/*.dropdown-content1 .dropLink1:hover{
-    display: block;
-}*/
-
 #t1{
     position: relative;
-    left: 45%;
+    left: 50%;
     text-align: center;
     top: 30%;
     margin: 0 auto;
@@ -155,36 +149,47 @@ body{
 /*****************For making it responsive in mobile view*******************/
 @media screen and (max-width: 500px){
     .nav a {
-        font-size: 18px; 
+        font-size: 15px; 
         padding-bottom: 10px;   
     }
 
     .nav a:hover{
-        font-size: 20px;
+        font-size: 17px;
     }
 
     .nav button {
-        font-size: 19px;  
-        padding-bottom: 8px;
-         
+        font-size: 16px;  
+        padding-top: 20px;
     }
 
     .nav button:hover{
-        font-size: 20px;
+        font-size: 18px;
+    }
+
+    .dropLink1 {
+        left: 10px;
+    }
+
+    .dropLink2 {
+        left: 42%;
+    }
+
+    .dropLink3 {
+        right: 10px; 
     }
 
     /* Dropdown Content (Hidden by Default) */
     .dropdown-content1 {
-        min-width: 150px;
+        min-width: 140px;
     }
 
     /* Links inside the dropdown */
     .dropdown-content1 a {
-        font-size: 14px;
+        font-size: 13px;
     }
 
     .dropdown-content1 a:hover {
-        font-size: 16px;
+        font-size: 15px;
     }
 
     /* Show the dropdown menu on hover */
