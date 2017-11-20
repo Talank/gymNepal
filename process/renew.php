@@ -4,7 +4,7 @@
 	<title>Renew</title>
 	<link rel="stylesheet" type="text/css" href="../css/renewDesign.css">
 </head>
-<body>
+<body bgcolor="#FAFAFA">
 	<?php
 	include"../pages/connect.php";
 	$user_id=$_GET['id'];

@@ -33,12 +33,13 @@ function changeColor(){
       $num=mysqli_num_rows($result);
 
       $suffix=($num!=1 && $num!=0)?'s':'';
-            echo "<p style=color:white>your have got ".$num." result".$suffix."<br>";
+            echo "<p align=center>your have got ".$num." result".$suffix."<br>";
             echo"<table id=t1><tr><th>Reg no.</th>
+                <th>Dp</th>
                 <th>Name</th>
                 <th>address</th>
                 <th>R.day</th>
-                <th>Dp</th>
+                
                 <th>Action</tr>";
 
 
@@ -49,6 +50,7 @@ function changeColor(){
               
         echo"<tr>";
         echo "<td>" .$row['user_id']."</td>";
+        echo "<td><img src=../Images/$row[picture] height=70 width=70 style=padding:10px;></td>";
         echo "<td>".$row['firstname']." ".$row['lastname']."</td>";
         echo "<td >".$row['temporay_address']."</td>";
 
@@ -58,7 +60,7 @@ function changeColor(){
         else{
           echo '<td style="color: red;">finished</td>';
         }
-        echo "<td><img src=../Images/$row[picture] height=60 width=80></td>";
+        
         echo "<td><a href=renew.php?id=$row[user_id]><button style=width:auto;margin-left: 10px;>Edit</button></a><a href=attend.php?id=$row[user_id]><button style=width:auto;margin-left: 10px;><img src=../Images/tick.png width=17 height=17 id=img></button></a></td>";
 
         echo"</tr>";
@@ -67,7 +69,7 @@ function changeColor(){
               echo"</table>";
               if($num<1)
               {
-                echo"<p id=error style=color:white>Invalid username! sorry couldnt found it</p>";
+                echo"<p id=error style=color:black>Invalid username! sorry couldnt found it</p>";
               }
            
           }

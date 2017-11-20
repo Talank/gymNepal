@@ -11,9 +11,10 @@
    	width: 29%;
    	height: auto;
    	margin: auto;
-   	margin-top: 10px;
+   	margin-top: 10px
    	margin-right: 40px;
-   	background: blue;
+    float: right;
+   	background: #009688;
    }
 
 	</style>
@@ -30,18 +31,18 @@
  $date1=$_POST['date1'];
  $date2=$_POST['date2'];
  include"../pages/connect.php";
- $stmt="SELECT * from `users` where issue_date between '$date1' and '$date2'";
+ $stmt="SELECT * from `users` where issue_date between '$date1' and '$date2' order by issue_date asc,user_id asc";
  $result=mysqli_query($conn,$stmt);
   $num=mysqli_num_rows($result);
   		echo"<table id=t1>
   		        <tr>
  				<th align=center>id</th>
-                <th>firstname</th>
-                <th>lastname</th>
-                <th>duedate</th>    
-                <th>issuedate</th> 
-               
                 <th>Dp</th>
+                <th>Name</th>
+                <th>Duedate</th>    
+                <th>Issuedate</th> 
+               
+                
                 <th>Details</th>
                 </tr>";
                 
@@ -50,14 +51,14 @@ if($num>0){
  while($row=mysqli_fetch_array($result)){
  echo"<tr>
  	  <td>$row[user_id]</td>
-       <td>$row[firstname]</td>
-       <td>$row[lastname]</td>
+    <td><img src=../Images/$row[picture] height=60 width=80></td>
+       <td>$row[firstname] $row[lastname]</td>
        <td>$row[duedate]</td>
        <td>$row[issue_date]</td>
 
        
-       <td><img src=../Images/$row[picture] height=60 width=80></td>
-       <td><span class=s1 value=$row[user_id]><button id=b1>show more</button></td>
+       
+       <td><span class=s1 value=$row[user_id]><button id=b1>show more</button></span></td>
        <div id=id01 ></div>
       </tr>";
    
@@ -66,7 +67,7 @@ if($num>0){
 }
  }
  else{
- 	echo"<p style=color:white align=center>No result</p>";
+ 	echo"<p style=black:white align=center>No result</p>";
  }
  ?>
 

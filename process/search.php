@@ -63,7 +63,7 @@ else{
       
     </div>
 
-	<button  onclick="document.getElementById('id01').style.display='block'" style="width:auto;margin-left: 10px;">Register</button>
+	<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;margin-left: 10px;">Register</button>
 	<a href="logout.php"><button style="width: auto;">logout</button></a>
 <input type="text" name="string" id="string" placeholder="Search by name or id....">
 <div id="content"></div>
