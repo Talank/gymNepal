@@ -34,7 +34,20 @@
 	<br><br>
 	
     <b>Attendance:<?php echo $row['value']; ?></b><br><br>
-    <label><b>NEW DATE:</b><input type="date" id="myDate" value=<?php echo $row['duedate']; ?> name="date"></label><br>
+    <!-- <label><b>NEW DATE:</b><input type="date" id="myDate" value=<?php //echo $row['duedate']; ?> name="date"></label><br> -->
+
+    <span id="myDate"><b>DUE DATE: </b><?php echo $row['duedate'];?></span><br><br>
+
+    <label><b id="myDate">NEW DATE</b>
+        <select name="date">
+           <option value="1" selected="selected">1 month</option>
+           <option value="3">3 month</option>
+           <option value="6">6 month</option>
+           <option value="12">12 month</option>
+        </select>
+    </label>
+    <br><br>
+
 	<button style="margin-left: 10px;"><b>update</b></button>
 	</form>
 	<a href="search.php"><input type="button" value="back"></a>

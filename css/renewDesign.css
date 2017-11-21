@@ -1,5 +1,5 @@
 #user_image{
-	width: 180px;
+	min-width: 180px;
 	border-radius: 10px;
 	padding-left: 25%;
 	height: 160px;

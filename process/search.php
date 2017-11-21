@@ -40,10 +40,6 @@ else{
       <div class="dropLink2">
         <a href="#">Report</a>
       </div>
-
-     
-
-
       
       <div>
         <a href="#" class="dropLink3">About Gym</a>
