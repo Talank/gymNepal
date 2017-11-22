@@ -9,8 +9,9 @@
 </head>
 <body bgcolor="#FAFAFA">
 	<?php
-	include"../pages/connect.php";
 	$user_id=$_GET['id'];
+	include"../pages/connect.php";
+	include "clear_attendance.php";
 	$stmt="select firstname,lastname,duedate,picture,count(*) as value from users,attendance where users.user_id=attendance.user_id and users.user_id=$user_id";
 	$result=mysqli_query($conn,$stmt)
 			or die("Error : Sorry ! can not execute the process");
@@ -40,7 +41,8 @@
 
     <label><b id="myDate">NEW DATE</b>
         <select name="date">
-           <option value="1" selected="selected">1 month</option>
+        	<option value="0" selected="selected">0 month</option>
+           <option value="1" >1 month</option>
            <option value="3">3 month</option>
            <option value="6">6 month</option>
            <option value="12">12 month</option>
