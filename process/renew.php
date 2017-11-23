@@ -40,7 +40,7 @@
     <span id="myDate"><b>DUE DATE: </b><?php echo $row['duedate'];?></span><br><br>
 
     <label><b id="myDate">NEW DATE</b>
-        <select name="date">
+        <select name="date" id="selectMonths" onchange ="showAmount()">
         	<option value="0" selected="selected">0 month</option>
            <option value="1" >1 month</option>
            <option value="3">3 month</option>
@@ -48,6 +48,14 @@
            <option value="12">12 month</option>
         </select>
     </label>
+    <br><br>
+
+    <b>AMOUNT TO PAY:</b>
+    <input type="text" name="amount" id="amount" oninput="showDueAmount()">
+    <br><br>
+
+    <b>DUE BALANCE: </b>
+    <span id="dueAmount" style="color: white;"></span>
     <br><br>
 
 	<button style="margin-left: 10px;"><b>update</b></button>
