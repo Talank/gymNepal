@@ -46,6 +46,8 @@
         else{
           echo '<td style="color: red;">finished</td>';
         }
+
+         
          
          $message=($row['status']!=0)?'<p style=color:green>active</p>':'<p style=color:red>passive</p>';
          echo"<td>".$message."</td>";
@@ -54,14 +56,17 @@
                   <button class='edit_btn'>
                     Edit
                   </button>
-                </a>
-
-                <a href=attend.php?id=$row[user_id]>
-                  <button class='tick_mark'>
-                    <img src=../Images/tick.png id=img>
-                  </button>
-                </a>
-              </td>";
+                </a>";
+                
+                if($row['status']!=0){
+                  echo"
+                    <a href=attend.php?id=$row[user_id]>
+                      <button class='tick_mark'>
+                        <img src=../Images/tick.png id=img>
+                      </button>
+                    </a>";
+                }
+             echo"</td>";
 
         echo"</tr>";
 

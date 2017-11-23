@@ -8,6 +8,12 @@ $result_1=mysqli_query($conn,$stmt_1);
  $row_1=mysqli_fetch_array($result_1);
  $duration=$row_1['count'];
 
+$stmt_0="select * from `pending` where user_id='$id'";
+$result_0=mysqli_query($conn,$stmt_0);
+$row_0=mysqli_fetch_array($result_0);
+
+if (!$row_0) {
+
  if($duration>0){
      if($duration<7){
      	echo "<script type='text/javascript'>alert('Sorry less than 7 days can not be pended.Thank you');</script>";
@@ -31,6 +37,10 @@ $result_1=mysqli_query($conn,$stmt_1);
 }
 else{
 	echo"Sorry! your duration is already finished!";
+}
+}
+else{
+	echo "<script type='text/javascript'>alert('Already in pending');</script>";
 }
 
 ?>
