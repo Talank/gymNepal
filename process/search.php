@@ -34,21 +34,28 @@ else{
         <div class="dropdown-content1">
           <a href="view-users.php">view by date</a>
           <a href="#">view by address</a>
+          <a href="attendance.php">view by attendance</a>
+          <a href="pending.php">Pending users</a>
+
+
         </div>
       </div>
       
       <div class="dropLink2">
         <a href="#">Report</a>
+        
       </div>
       
       <div>
         <a href="#" class="dropLink3">About Gym</a>
       </div>
-      
+
+
     </div>
 
 	<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;margin-left: 10px;">Register</button>
 	<a href="logout.php"><button style="width: auto;">logout</button></a>
+  <a href="add_pending.php"><button style="width: auto;">add pending</button></a>
 <input type="text" name="string" id="string" placeholder="Search by name or id....">
 <div id="content"></div>
 

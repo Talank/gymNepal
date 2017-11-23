@@ -1,0 +1,29 @@
+body{
+	background: #2196F3;
+	
+	margin-top: 15px;
+	margin-left: 10%;
+}
+#parent_content{
+	margin-top: 10%;
+	margin: 2px;
+	margin-right: 40px;
+	background: #FF6D00;
+	height: 540px;
+	width: 700px;
+
+}
+#img1{
+    width: 120px;
+    height: 100px;
+	padding: 10px;
+}
+#button1{
+	margin: 10px;
+	margin-left: 10px;
+}
+b{
+	font-style: normal;
+	font-weight: 1px;
+	text-decoration: initial;
+}

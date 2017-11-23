@@ -16,8 +16,7 @@
   	{
 
       include"../pages/connect.php";
-      $stmt=" SELECT *,datediff(duedate,now()) as count from `users`,`information`  where (users.firstname like '%$name%' ||users.user_id like '%$name%') and information.user_id=users.user_id";
-      //$stmt="SELECT * from `users` where firstname like '%$name%'";
+      $stmt=" SELECT *,datediff(duedate,now()) as count from `users`,`information`,`status`  where (users.firstname like '%$name%' ||users.user_id like '%$name%') and information.user_id=users.user_id and users.user_id=status.user_id";
       $result=mysqli_query($conn,$stmt);
 
       $num=mysqli_num_rows($result);
@@ -29,13 +28,12 @@
                 <th>Name</th>
                 <th>address</th>
                 <th>R.day</th>
+                <th>Status</th>
                 <th>Action</tr>";
 
       while($row=mysqli_fetch_array($result))
      {
-        //echo "<br><section>"."name-"$row['item_name']."price-".$row['price']."code".$row['item_code']."</section><br>";
-        //echo $row['information'];
-              
+            
         echo"<tr>";
         echo "<td>" .$row['user_id']."</td>";
         echo "<td><img src=../Images/$row[picture] height=70 width=70 style=padding:10px;></td>";
@@ -48,7 +46,9 @@
         else{
           echo '<td style="color: red;">finished</td>';
         }
-
+         
+         $message=($row['status']!=0)?'<p style=color:green>active</p>':'<p style=color:red>passive</p>';
+         echo"<td>".$message."</td>";
         echo "<td>
                 <a href=renew.php?id=$row[user_id]>
                   <button class='edit_btn'>
