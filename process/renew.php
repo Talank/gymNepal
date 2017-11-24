@@ -6,6 +6,37 @@
 	<script src="../jquery-3.1.1.min.js"></script>
 	<script type="text/javascript" src="../javascript/showup.js">
 	</script>
+
+	<script type="text/javascript">
+		//code for showing amount to be paid in the input field
+		var amount;
+		function showAmount(){
+			var months = document.getElementById('selectMonths').value;
+			if(months=="0"){
+			      amount ='000';
+			    }
+				else if (months == "1") {
+				  amount =700;
+				}
+				else if(months =="3"){
+				  amount =2100;
+				}
+				else if(months=="6"){  
+				  amount =4200;
+				}
+				else{
+				  amount =8400;
+				}
+				document.getElementById("amount").value = amount;
+		}
+
+		function showDueAmount(){
+			var enteredAmount= document.getElementById("amount").value;
+			var dueAmount = amount - enteredAmount;
+			document.getElementById("dueAmount").value = dueAmount;
+		}
+	</script>
+
 </head>
 <body bgcolor="#FAFAFA">
 	<?php
@@ -55,7 +86,8 @@
     <br><br>
 
     <b>DUE BALANCE: </b>
-    <span id="dueAmount" style="color: white;"></span>
+    <input type="number" name="dueAmount" id="dueAmount">
+    <!-- <span id="dueAmount" style="color: white;"></span> -->
     <br><br>
 
 	<button style="margin-left: 10px;"><b>update</b></button>

@@ -1,6 +1,7 @@
 <?php
  $plan=$_POST['date'];
  $user_id=$_POST['user_id'];
+ $dueAmount=$_POST['dueAmount'];
 
  echo $firstname=$_POST['firstname'];
  echo $lastname=$_POST['lastname'];
@@ -41,5 +42,21 @@ include "../pages/connect.php";
 		else{
 			echo "error";
 		}
+
+		//if (!is_nan($dueAmount)) {
+			$stmt3="select due from duebalance where user_id =$user_id";
+			$result3=mysqli_query($conn,$stmt3);
+			
+			if (!$result3)
+				$stmt4="insert into duebalance(user_id,due) values($user_id,$dueAmount)";
+
+			else
+				$stmt4="update duebalance set due=due+$dueAmount where user_id =$user_id";
+
+			
+			$result4=mysqli_query($conn,$stmt4);
+		// }
+		// else
+		// 	echo "Due not a number";
 	}
 ?>
