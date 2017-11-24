@@ -2,7 +2,7 @@
     position: relative;
     margin: 0 auto;
     width: 75%;
-    height: 64px;
+    height: 70px;
     background-color: #212a34;
     /*text-align: center;*/
 }
@@ -11,6 +11,19 @@
     left: 15px;
     position: absolute;
     /*left: 100px;*/
+}
+
+.search{
+    /*height: 40px;
+    border-radius: 0px;
+    outline: none;
+    padding-bottom: 0px;
+    top: 7px;*/
+    background-size: 100% 100%;
+}
+
+.search:hover {
+    height: 45px;
 }
 
 .dropLink2 {
@@ -46,12 +59,13 @@
     margin-top: 1px;  
 }
 
-.nav button:hover{
+/*.nav button:hover{
     font-size: 27.5px;
-}
+}*/
 
 /* Dropdown button */
 .dropLink1 .dropbtn { 
+    height: 
     border: none;
     outline: none;
     color: white;

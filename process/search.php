@@ -29,7 +29,8 @@ else{
     <div class="nav">
     
       <div class="dropLink1">
-        <button class="dropbtn">view users 
+        <button class="dropbtn">
+        <img src="../Images/search_icon.png" class="search"> 
         </button>
         <div class="dropdown-content1">
           <a href="view-users.php">view by date</a>
