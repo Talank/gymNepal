@@ -44,7 +44,7 @@ include "../pages/connect.php";
 		}
 
 		//if (!is_nan($dueAmount)) {
-			$stmt3="select due from duebalance where user_id =$user_id";
+			$stmt3="select * from duebalance where user_id =$user_id";
 			$result3=mysqli_query($conn,$stmt3);
 			
 			if (!$result3)
