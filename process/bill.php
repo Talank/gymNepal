@@ -12,6 +12,15 @@ $row=mysqli_fetch_array($result);
 <head>
 	<title>Bill</title>
 	<link rel="stylesheet" type="text/css" href="../css/bill.css">
+	<script language=javascript>
+		function printPage() {
+		if (window.print) {
+
+		  window.print(); 
+		  }
+		}
+</script>
+
 </head>
 <body bg-color="#FAFAFA">
 <h1 align="center">Bill</h1>
@@ -24,9 +33,10 @@ $row=mysqli_fetch_array($result);
 <p class="p2">Due amount-<b><?php echo $row['due'];?></b></p>
 <p class="p2">Date of payment-<b><?php echo date("Y-m-d");?></b></p>
 <p class="p2">Status- <b><?php $msg=($row['due']>0)?"not cleared":"clear"; echo $msg;   ?></b></p>
-<p class="p2">Signature-</p>
-<p class="p2">Amount Paid: $ <span style="text-decoration: underline; white-space: pre;"><?php echo $_SESSION['due'];?>                   </span></p>
-<button>print</button>
+
+<p class="p2">Amount Paid: Rs. <?php echo $_SESSION['due'];?>
+<p class="p2">Signature-<span style="text-decoration: underline; white-space: pre;">                  </span></p>
+<button onclick="printPage()">print</button>
 <a href="destroy_session.php"><button>back</button></a>
 
 	
