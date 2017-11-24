@@ -46,12 +46,15 @@ include "../pages/connect.php";
 		//if (!is_nan($dueAmount)) {
 			$stmt3="select due from duebalance where user_id =$user_id";
 			$result3=mysqli_query($conn,$stmt3);
+			$nums=mysqli_num_rows($result3);
 			
-			if (!$result3)
-				$stmt4="insert into duebalance(user_id,due) values($user_id,$dueAmount)";
-
-			else
+			if ($nums>0)
 				$stmt4="update duebalance set due=due+$dueAmount where user_id =$user_id";
+				
+			else
+				$stmt4="insert into duebalance values ($user_id,$dueAmount)";
+
+				
 
 			
 			$result4=mysqli_query($conn,$stmt4);
