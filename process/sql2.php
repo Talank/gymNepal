@@ -49,7 +49,7 @@
 
          
          
-         $message=($row['status']!=0)?'<p style=color:green>active</p>':'<p style=color:red>passive</p>';
+         $message=($row['status']!=0)?'<img src=../Images/online.png width=30 height=28':'<img src=../Images/offline.png  width=23 height=22';
          echo"<td>".$message."</td>";
         echo "<td>
                 <a href=renew.php?id=$row[user_id]>
