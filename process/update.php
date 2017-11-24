@@ -1,7 +1,10 @@
 <?php
+session_start();
  $plan=$_POST['date'];
- $user_id=$_POST['user_id'];
- $dueAmount=$_POST['dueAmount'];
+ $_SESSION['user_id']=$user_id=$_POST['user_id'];
+ $_SESSION['due']=$dueAmount=$_POST['dueAmount'];
+
+ 
 
  echo $firstname=$_POST['firstname'];
  echo $lastname=$_POST['lastname'];
@@ -37,7 +40,7 @@ include "../pages/connect.php";
 			$message="Date is now updated to ".$duedate."";
 			
 			echo "<script type='text/javascript'>alert('$message');</script>";
-			header("location:search.php");
+			header("location:bill.php");
 		}
 		else{
 			echo "error";
@@ -58,6 +61,9 @@ include "../pages/connect.php";
 
 			
 			$result4=mysqli_query($conn,$stmt4);
+			if($result4){
+				header("location:bill.php");
+			}
 		// }
 		// else
 		// 	echo "Due not a number";
