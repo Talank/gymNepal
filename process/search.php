@@ -15,6 +15,7 @@ else{
 	<link rel="shortcut icon" href="../Images/bulls.png" />
 	<link rel="stylesheet" type="text/css" href="../css/table.css">
 	<link rel="stylesheet" type="text/css" href="../css/form.css">
+  
 
 		<script src="../jquery-3.1.1.min.js"></script>
 		<script type="text/javascript" src="../javascript/form.js"></script>
@@ -58,10 +59,10 @@ else{
 	<a href="logout.php"><button style="width: auto;">logout</button></a>
   <a href="add_pending.php"><button style="width: auto;">add pending</button></a>
 <input type="text" name="string" id="string" placeholder="Search by name or id....">
-<div id="content"></div>
+<div class="container"><div id="content"></div></div>
 
 <div id="id01" class="modal">
-  <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">×</span>
+  <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Form">×</span>
   <form class="modal-content animate" action="form-process.php" method="post" enctype="multipart/form-data">
     <div class="container">
       <label><b class="b1">Firstname</b></label>
