@@ -13,15 +13,33 @@
  $plan=$_POST['plan'];
  $issue=$_POST['issue'];
  $image=$_FILES["fileToUpload"]["name"];
+ $today=date('Y-m-d');
+ $date=date_create($today);
+
+if ($plan == 1) {
+  date_add($date,date_interval_create_from_date_string("1 months"));
+}
+else if($plan ==3){
+  date_add($date,date_interval_create_from_date_string("3 months"));
+}
+else if($plan==6){
+  date_add($date,date_interval_create_from_date_string("6 months"));
+}
+else{
+  date_add($date,date_interval_create_from_date_string("12 months"));
+}
+$plan=date_format($date,"Y-m-d");
 
  include"../pages/connect.php";
  $stmt="INSERT into users values('','$firstname','$lastname','$plan','$issue','$image')";
  $stmt2="INSERT into information values('',$phone,'$dob','$temp_address','$perm_address','$occupation')";
+  $stmt3="INSERT into status values('',1)";
 
    $result=mysqli_query($conn,$stmt);
    $result2=mysqli_query($conn,$stmt2);
+   $result3=mysqli_query($conn,$stmt3);
 
-   if($result && $result2){
+   if($result && $result2 && $result3){
     header("location:../process/search.php");
    }
    else{

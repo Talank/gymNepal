@@ -13,20 +13,9 @@ else{
 <head>
 	<title>Bulls gym</title>
 	<link rel="shortcut icon" href="../Images/bulls.png" />
-	<style type="text/css">
-
-#content {
-	background-color: transparent;
-
-	background-size: 2em;
-	width:40%;
-	height: 20%;
-
-}
-
-	</style>
 	<link rel="stylesheet" type="text/css" href="../css/table.css">
 	<link rel="stylesheet" type="text/css" href="../css/form.css">
+  
 
 		<script src="../jquery-3.1.1.min.js"></script>
 		<script type="text/javascript" src="../javascript/form.js"></script>
@@ -34,7 +23,7 @@ else{
 	<script type="text/javascript" src="../java4.js"></script>
 </head>
 <body>
-	<h1 align="center" style="color:white;font-style: italic;">Pokhara Gym house</h1>
+	<h1 align="center" style="color:black;font-style: normal;">Pokhara Gym house</h1>
 
 
 <!-- ************************ Navigation bar code goes here****************************** -->
@@ -46,26 +35,33 @@ else{
         <div class="dropdown-content1">
           <a href="view-users.php">view by date</a>
           <a href="#">view by address</a>
+          <a href="attendance.php">view by attendance</a>
+          <a href="pending.php">Pending users</a>
+
+
         </div>
       </div>
       
       <div class="dropLink2">
         <a href="#">Report</a>
+        
       </div>
       
       <div>
         <a href="#" class="dropLink3">About Gym</a>
       </div>
-      
+
+
     </div>
 
-	<button  onclick="document.getElementById('id01').style.display='block'" style="width:auto;margin-left: 10px;">Register</button>
+	<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;margin-left: 10px;">Register</button>
 	<a href="logout.php"><button style="width: auto;">logout</button></a>
+  <a href="add_pending.php"><button style="width: auto;">add pending</button></a>
 <input type="text" name="string" id="string" placeholder="Search by name or id....">
-<div id="content"></div>
+<div class="container"><div id="content"></div></div>
 
 <div id="id01" class="modal">
-  <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">×</span>
+  <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Form">×</span>
   <form class="modal-content animate" action="form-process.php" method="post" enctype="multipart/form-data">
     <div class="container">
       <label><b class="b1">Firstname</b></label>
@@ -86,8 +82,17 @@ else{
       <label><b class="b1">Permanent address</b></label>
       <input type="text" placeholder="Permanent address" name="perm_address" required>
 
-      <label><b class="b1">Plan</b></label><br><br>
-      <input type="date" placeholder="Plan" name="plan" required><br><br>
+      <!-- <label><b class="b1">Plan</b></label><br><br>
+      <input type="date" placeholder="Plan" name="plan" required><br><br> -->
+
+      <label><b class="b1">Plan</b>
+        <select name="plan">
+           <option value="1" selected="selected">1 month</option>
+           <option value="3">3 month</option>
+           <option value="6">6 month</option>
+           <option value="12">12 month</option>
+        </select>
+      </label><br><br>
 
       <label><b class="b1">Issue date</b></label><br><br>
       <input type="date" placeholder="issue date" name="issue" required><br><br>

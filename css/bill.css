@@ -1,0 +1,33 @@
+h1{
+	font-style: normal;
+	font-family: sans-serif;
+	background-color: yellow;
+
+}
+h2{
+	margin: 10px;
+	margin-left: 42%;
+}
+h3{
+	text-align: center;
+	font-style: normal;
+	font-family:sans-serif;
+	font-size: 1.3em;
+}
+#p1{
+	
+	margin-right: 10%;
+	margin-top: 9px;
+	font-family: monospace;
+}
+#div1{
+	padding: 10px;
+	background: #BDBDBD;
+	margin-left: 20%;
+	height:340px; 
+	width:40%;
+}
+.p2{
+	font-family: sans-serif;
+
+}

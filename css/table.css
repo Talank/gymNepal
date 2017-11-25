@@ -1,35 +1,26 @@
-/*nav{
-    padding-left: 30%; 
-    padding-bottom: 20px;
-    width: 70%;
-    float: right;
-}*/
-
 .nav{
     position: relative;
     margin: 0 auto;
-    width: 90%;
-    height: 60px;
+    width: 75%;
+    height: 64px;
     background-color: #212a34;
     /*text-align: center;*/
 }
 
 .dropLink1 {
-    left: 5px;
+    left: 15px;
     position: absolute;
     /*left: 100px;*/
 }
 
 .dropLink2 {
-    left: 43%;
+    left: 45%;
     position: absolute;
-    /*left: 400px;*/
 }
 
 .dropLink3 {
     position: absolute;
-    right: 5px; 
-   /* left: 700px;*/
+    right: 15px; 
 }
 
 .nav a {
@@ -51,6 +42,7 @@
     color: #fff;
     font-size: 25px;  
     padding-bottom: 10px;
+    padding-left: 0px;
     margin-top: 1px;  
 }
 
@@ -97,35 +89,40 @@
   display: block;
 }
 
-/* Show the dropdown menu on hover */
-/*.dropdown-content1 .dropLink1:hover{
-    display: block;
-}*/
-
 #t1{
-     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    position: relative;
+    min-width: 80%;
+    left: 50%;
+    text-align: center;
+    top: 30%;
+    margin: 0 auto;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     border-collapse: collapse;
-    width: 250%;
+    width: 150%;
     padding: 24px;
-    
 }
 #t1 th{
-     padding-top: 10px;
+    left: 10px;
+    text-align: center;
+    padding-top: 10px;
     padding-bottom: 12px;
     text-align: left;
-    background-color: #4CAF50;
+    background-color: #263238;
     color: white;
+    padding-left: 50px;
+
 }
-#t1 th{
-    nth-child(even){background-color: #f2f2f2;}
+#t1 tr:nth-child(even){
+    background-color: #f2f2f2;
 }
 #t1 tr:hover{
     background-color: lightblue;
-     color: white;
+     
 
 }
 #t1 td{
-    color: white;
+    color: black;
+
 }
 #error{
     text-align: center;
@@ -133,7 +130,7 @@
 }
 
 body{
-    background-image: url('../Images/bg_wooden.jpg');        
+    background-color: #FAFAFA;        
     background-repeat: no-repeat;        
     position: relative;        
     /*width: 85%;            
@@ -142,40 +139,85 @@ body{
     margin-right: auto;     
 }
 
+#content {
+    background-color: transparent;
 
+    background-size: 2em;
+    width:40%;
+    height: 20%;
+
+}
+
+.edit_btn{
+    width:auto;
+    float: left;
+    min-width: 16px;
+    background-color: red;
+    
+    font-size: 16px;
+    left: 50px;
+    
+    margin-left: 15%;
+}
+
+.tick_mark{
+    float: right;
+    width:auto;
+    margin-right: 4px;
+}
+
+.tick_mark #img{
+     width: 18px;
+     height: 16px;
+}
 /*****************For making it responsive in mobile view*******************/
 @media screen and (max-width: 500px){
+    .nav{
+        width: 80%;
+    }
+
     .nav a {
-        font-size: 18px; 
+        font-size: 15px; 
         padding-bottom: 10px;   
     }
 
     .nav a:hover{
-        font-size: 20px;
+        font-size: 17px;
     }
 
     .nav button {
-        font-size: 19px;  
-        padding-bottom: 8px;
-         
+        font-size: 16px;  
+        padding-top: 20px;
     }
 
     .nav button:hover{
-        font-size: 20px;
+        font-size: 18px;
+    }
+
+    .dropLink1 {
+        left: 10px;
+    }
+
+    .dropLink2 {
+        left: 42%;
+    }
+
+    .dropLink3 {
+        right: 10px; 
     }
 
     /* Dropdown Content (Hidden by Default) */
     .dropdown-content1 {
-        min-width: 150px;
+        min-width: 140px;
     }
 
     /* Links inside the dropdown */
     .dropdown-content1 a {
-        font-size: 14px;
+        font-size: 13px;
     }
 
     .dropdown-content1 a:hover {
-        font-size: 16px;
+        font-size: 15px;
     }
 
     /* Show the dropdown menu on hover */
