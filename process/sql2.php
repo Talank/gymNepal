@@ -31,58 +31,86 @@
                 <th>Status</th>
                 <th>Action</tr>";
 
+            //eliminating fields while displaying in mobile
+            echo "<table id=t1InMedia><tr><th>Reg no.</th>
+                <th>Dp</th>
+                <th>Name</th>
+                <th>Action</tr>";
+
       while($row=mysqli_fetch_array($result))
      {
             
-        echo"<tr>";
-        echo "<td>" .$row['user_id']."</td>";
-        echo "<td><img src=../Images/$row[picture] height=70 width=70 style=padding:10px;></td>";
-        echo "<td>".$row['firstname']." ".$row['lastname']."</td>";
-        echo "<td >".$row['temporay_address']."</td>";
+        echo"<tr class='trInComputer'>";
+          echo "<td>" .$row['user_id']."</td>";
+          echo "<td><img src=../Images/$row[picture] height=70 width=70 style=padding:10px;></td>";
+          echo "<td>".$row['firstname']." ".$row['lastname']."</td>";
+          echo "<td >".$row['temporay_address']."</td>";
 
-        if($row['count']>0){
-         echo "<td id=color>".$row['count']."</td>";
-        }
-        else{
-          echo '<td style="color: red;">finished</td>';
-        }
-
-         
-         
-         $message=($row['status']!=0)?'<img src=../Images/online.png width=30 height=28':'<img src=../Images/offline.png  width=23 height=22';
-         echo"<td>".$message."</td>";
-        echo "<td>
-                <a href=renew.php?id=$row[user_id]>
-                  <button class='edit_btn'>
-                    Edit
-                  </button>
-                </a>";
-                
-                if($row['status']!=0){
-                  echo"
-                    <a href=attend.php?id=$row[user_id]>
-                      <button class='tick_mark'>
-                        <img src=../Images/tick.png id=img>
-                      </button>
-                    </a>";
-                }
-             echo"</td>";
-
+          if($row['count']>0){
+           echo "<td id=color>".$row['count']."</td>";
+          }
+          else{
+            echo '<td style="color: red;">finished</td>';
+          }
+           
+          $message=($row['status']!=0)?'<img src=../Images/online.png width=30 height=28':'<img src=../Images/offline.png  width=23  height=22';
+           
+          echo"<td>".$message."</td>";
+          echo "<td>
+                  <a href=renew.php?id=$row[user_id]>
+                    <button class='edit_btn'>
+                      Edit
+                    </button>
+                  </a>";
+                  
+                  if($row['status']!=0){
+                    echo"
+                      <a href=attend.php?id=$row[user_id]>
+                        <button class='tick_mark'>
+                          <img src=../Images/tick.png id=img>
+                        </button>
+                      </a>";
+                  }
+                echo"</td>";
         echo"</tr>";
 
-              }
-              echo"</table>";
-              if($num<1)
-              {
-                echo"<p id=error style=color:black>Invalid username! sorry couldnt found it</p>";
-              }
-           
-          }
+        //eliminating fields while displaying in mobile in tr inside loop
+        echo"<tr class='trInMedia'>";
+          echo "<td>" .$row['user_id']."</td>";
+          echo "<td><img src=../Images/$row[picture] height=70 width=70 style=padding:10px;></td>";
+          echo "<td>".$row['firstname']." ".$row['lastname']."</td>";
+          echo "<td>
+                  <a href=renew.php?id=$row[user_id]>
+                    <button class='edit_btn'>
+                      Edit
+                    </button>
+                  </a>";
+                  
+                  if($row['status']!=0){
+                    echo"
+                      <a href=attend.php?id=$row[user_id]>
+                        <button class='tick_mark'>
+                          <img src=../Images/tick.png id=img>
+                        </button>
+                      </a>";
+                  }
+                echo"</td>";
+        echo"</tr>";
 
-          else{
-            echo"Insert please.......";
-          }
-        }
+      }
+
+      echo"</table>";
+      if($num<1)
+      {
+        echo"<p id=error style=color:black>Invalid username! sorry couldnt found it</p>";
+      }
+           
+    }
+
+    else{
+      echo"Insert please.......";
+    }
+  }
 ?>
 
 </body>

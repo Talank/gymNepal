@@ -14,12 +14,10 @@
 }
 
 .search{
-    /*height: 40px;
+    height: 35px;
     border-radius: 0px;
     outline: none;
-    padding-bottom: 0px;
-    top: 7px;*/
-    background-size: 100% 100%;
+    margin-top: 0px;
 }
 
 .search:hover {
@@ -103,6 +101,15 @@
   display: block;
 }
 
+#string{
+    width: 90%;
+    margin-left: 5%;
+}
+
+#string:focus{
+    border-color: blue;
+}
+
 #t1{
     position: relative;
     min-width: 80%;
@@ -184,6 +191,22 @@ body{
      width: 18px;
      height: 16px;
 }
+
+/*************Hidding the reduced table at first by default*****************/
+#t1InMedia{
+    display:none;
+}
+
+.trInMedia{
+    display: none;
+}
+
+.trInComputer{
+    display: inline;
+}
+
+
+
 /*****************For making it responsive in mobile view*******************/
 @media screen and (max-width: 500px){
     .nav{
@@ -237,5 +260,22 @@ body{
     /* Show the dropdown menu on hover */
     .dropLink1:hover .dropdown-content1 {
       display: block;
+    }
+
+    /************************Hide extended table in mobile view*********************/
+    #t1{
+        display: none;
+    }
+
+    #t1InMedia{
+        display: inline;
+    }
+
+    .trInMedia{
+        display: inline;
+    }
+
+    .trInComputer{
+        display: none;
     }
 }
