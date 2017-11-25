@@ -16,7 +16,7 @@
   	{
 
       include"../pages/connect.php";
-      $stmt=" SELECT *,datediff(duedate,now()) as count from `users`,`information`,`status`  where (users.firstname like '%$name%' ||users.user_id like '%$name%') and information.user_id=users.user_id and users.user_id=status.user_id";
+      $stmt=" SELECT *,datediff(duedate,now()) as count from `users`,`information`,`status`  where (users.firstname like '%$name%' ||users.user_id ='$name') and information.user_id=users.user_id and users.user_id=status.user_id";
       $result=mysqli_query($conn,$stmt);
 
       $num=mysqli_num_rows($result);
