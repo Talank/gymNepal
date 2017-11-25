@@ -110,6 +110,7 @@
     border-color: blue;
 }
 
+
 #t1{
     position: relative;
     min-width: 80%;
@@ -263,9 +264,9 @@ body{
     }
 
     /************************Hide extended table in mobile view*********************/
-    #t1{
+    /*#t1{
         display: none;
-    }
+    }*/
 
    /* #t1InMedia{
         display: inline;

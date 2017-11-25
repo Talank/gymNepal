@@ -2,11 +2,20 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <!-- <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0 shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <link rel="stylesheet" type="text/css" href="../bootstrap-3.3.7/css/bootstrap.css"> -->
+
   <link rel="stylesheet" type="text/css" href="../css/table.css">
+
   <title></title>
 </head>
 <body>
 
+ <!--  <script src="js/jquery.slim.min.js"></script>
+  <script src="js/thether.min.js"></script>
+  <script src="js/bootstrap.min.js"></script> -->
 <?php 
 
   if(isset($_POST['name']))
@@ -23,6 +32,9 @@
 
       $suffix=($num!=1 && $num!=0)?'s':'';
             echo "<p align=center>your have got ".$num." result".$suffix."<br>";
+
+            // echo"<div class='container'>";
+
             echo"<table id=t1><tr><th>Reg no.</th>
                 <th>Dp</th>
                 <th>Name</th>
@@ -100,6 +112,8 @@
       }
 
       echo"</table>";
+
+      // echo "</div>";
       if($num<1)
       {
         echo"<p id=error style=color:black>Invalid username! sorry couldnt found it</p>";
