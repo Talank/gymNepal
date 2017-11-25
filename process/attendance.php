@@ -35,8 +35,6 @@ $num=mysqli_num_rows($result);
   }
 ?>
 
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -66,9 +64,6 @@ $num=mysqli_num_rows($result);
                 <th>Dp</th>
                 <th>Name</th>
                 <th>Duedate</th>    
-                
-               
-                
                 <th>Operation</th>
                 </tr>";
 	if($num>0){
@@ -78,18 +73,13 @@ $num=mysqli_num_rows($result);
     <td><img src=../Images/$row[picture] height=60 width=80></td>
        <td>$row[firstname] $row[lastname]</td>
        <td>$row[duedate]</td>
-       
-
-       
-       
        <td><span class=s1 value=$row[user_id]><button id=b1>message</button></span></td>
        <div id=id01 ></div>
       </tr>";
 	}
 }
 else{
-	echo "no attendance today";
-	
+	echo "no attendance today";	
 }
 ?>
 </body>
