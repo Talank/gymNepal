@@ -31,16 +31,16 @@
                 <th>Status</th>
                 <th>Action</tr>";
 
-            //eliminating fields while displaying in mobile
-            echo "<table id=t1InMedia><tr><th>Reg no.</th>
-                <th>Dp</th>
-                <th>Name</th>
-                <th>Action</tr>";
+            //eliminating fields while displaying in mobile 
+            // echo "<table id=t1InMedia><tr><th>Reg no.</th>
+            //     <th>Dp</th>
+            //     <th>Name</th>
+            //     <th>Action</tr>";
 
       while($row=mysqli_fetch_array($result))
      {
             
-        echo"<tr class='trInComputer'>";
+        echo"<tr>";
           echo "<td>" .$row['user_id']."</td>";
           echo "<td><img src=../Images/$row[picture] height=70 width=70 style=padding:10px;></td>";
           echo "<td>".$row['firstname']." ".$row['lastname']."</td>";
@@ -75,27 +75,27 @@
         echo"</tr>";
 
         //eliminating fields while displaying in mobile in tr inside loop
-        echo"<tr class='trInMedia'>";
-          echo "<td>" .$row['user_id']."</td>";
-          echo "<td><img src=../Images/$row[picture] height=70 width=70 style=padding:10px;></td>";
-          echo "<td>".$row['firstname']." ".$row['lastname']."</td>";
-          echo "<td>
-                  <a href=renew.php?id=$row[user_id]>
-                    <button class='edit_btn'>
-                      Edit
-                    </button>
-                  </a>";
+        // echo"<tr class='trInMedia'>";
+        //   echo "<td>" .$row['user_id']."</td>";
+        //   echo "<td><img src=../Images/$row[picture] height=70 width=70 style=padding:10px;></td>";
+        //   echo "<td>".$row['firstname']." ".$row['lastname']."</td>";
+        //   echo "<td>
+        //           <a href=renew.php?id=$row[user_id]>
+        //             <button class='edit_btn'>
+        //               Edit
+        //             </button>
+        //           </a>";
                   
-                  if($row['status']!=0){
-                    echo"
-                      <a href=attend.php?id=$row[user_id]>
-                        <button class='tick_mark'>
-                          <img src=../Images/tick.png id=img>
-                        </button>
-                      </a>";
-                  }
-                echo"</td>";
-        echo"</tr>";
+        //           if($row['status']!=0){
+        //             echo"
+        //               <a href=attend.php?id=$row[user_id]>
+        //                 <button class='tick_mark'>
+        //                   <img src=../Images/tick.png id=img>
+        //                 </button>
+        //               </a>";
+        //           }
+        //         echo"</td>";
+        // echo"</tr>";
 
       }
 

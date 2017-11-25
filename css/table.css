@@ -193,7 +193,7 @@ body{
 }
 
 /*************Hidding the reduced table at first by default*****************/
-#t1InMedia{
+/*#t1InMedia{
     display:none;
 }
 
@@ -203,7 +203,7 @@ body{
 
 .trInComputer{
     display: inline;
-}
+}*/
 
 
 
@@ -267,7 +267,7 @@ body{
         display: none;
     }
 
-    #t1InMedia{
+   /* #t1InMedia{
         display: inline;
     }
 
@@ -277,5 +277,5 @@ body{
 
     .trInComputer{
         display: none;
-    }
+    }*/
 }
