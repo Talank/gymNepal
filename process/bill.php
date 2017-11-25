@@ -34,7 +34,7 @@ $row=mysqli_fetch_array($result);
      	
 <p class="p2">Name-<b><?php echo $row['firstname']." ". $row['lastname']; ?></b></p>
 <p class="p2">Registration id- <b><?php echo $row['user_id']; ?> </b> </p>
-<p class="p2">Due amount-<b><?php echo $row['due'];?></b></p>
+
 <p class="p2">Date of payment-<b><?php echo date("Y-m-d");?></b></p>
 <p class="p2">Status- <b><?php $msg=($row['due']>0)?"not cleared":"clear"; echo $msg;   ?></b></p>
 
