@@ -40,23 +40,26 @@ $num=mysqli_num_rows($result);
 <head>
 	<title>Attendance</title>
 	<link rel="stylesheet" type="text/css" href="../css/table2.css">
+  <link rel="stylesheet" type="text/css" href="../css/date.css">
 </head>
 <body>
   <div class="filterByTime">
     <form method="get">
-      Select time: <br>
-      From: <input type="time" name="time1" required> &nbsp &nbsp 
-      To: <input type="time" name="time2" required> &nbsp &nbsp 
+      <b>Select time:</b> <br>
+      <b>From: </b><input type="time" name="time1" required> &nbsp &nbsp 
+      <b>To: </b><input type="time" name="time2" required> &nbsp &nbsp 
       <input type="Submit" name="filterByTime" value="Go">
     </form>
+    <a href="search.php"><button>back</button></a>
   </div>
-  <h1 align="center">Todays Attendance
+  <h1 align="center"><b style="font-family: sans-serif;">Todays attendance</b><img src="../Images/clock.png" width="40" height="40" style="margin-top: 20px;">
     <?php 
       if ($view_by_time) {
-        echo "<br>$time1 To $time2";
+        echo "<br><mark><b style=font-family:sans-serif;>$time1 $ampm1 To $time2 $ampm2</b></mark>";
       }
      ?>
   </h1>
+
 	<?php
 	echo"<table id=t1>
   		        <tr>
@@ -79,7 +82,7 @@ $num=mysqli_num_rows($result);
 	}
 }
 else{
-	echo "no attendance today";	
+	echo "<p align=center>no attendance today at this time.</p>";	
 }
 ?>
 </body>

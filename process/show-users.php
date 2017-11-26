@@ -8,11 +8,23 @@
    	width: 29%;
    	height: auto;
    	margin: auto;
+    opacity: 1;
    	margin-top: 10px
    	margin-right: 40px;
     float: right;
    	background: #009688;
    }
+   li{
+    list-style-type:circle; 
+   }
+   b{
+    font-family: sans-serif;
+
+   }
+   mark{
+    background-color: #4DB6AC;
+   }
+   
 
 	</style>
 	<link rel="stylesheet" type="text/css" href="../css/table2.css">
