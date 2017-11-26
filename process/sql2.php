@@ -20,13 +20,13 @@
 
   if(isset($_POST['name']))
   {
-  	$name=$conn->mysqli_real_escape_string($_POST['name']);
+  	$name=($_POST['name']);
   	if(!empty($name))
   	{
 
       include"../pages/connect.php";
       $stmt=" SELECT *,datediff(duedate,now()) as count from `users`,`information`,`status`  where (users.firstname like '%$name%' ||users.user_id ='$name') and information.user_id=users.user_id and users.user_id=status.user_id";
-      $result=mysqli_query($conn,$stmt) or die("<p style=color:red>Unable to find the results</p>".mysqli_error());
+      $result=mysqli_query($conn,$stmt);
 
       $num=mysqli_num_rows($result);
 

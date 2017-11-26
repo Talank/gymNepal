@@ -31,7 +31,7 @@ else{
     
       <div class="dropLink1">
         <button class="dropbtn">
-        <img src="../Images/search_icon.png" class="search"> 
+          <img src="../Images/search_icon.png" class="search"> 
         </button>
         <div class="dropdown-content1">
           <a href="view-users.php">view by date</a>
@@ -44,18 +44,21 @@ else{
       </div>
       
       <div class="dropLink2">
-        <a href="#">Report</a>
-        
+        <button onclick="document.getElementById('id01').style.display='block'" class="register">
+          <img src="../Images/register.jpg" class="search">
+        </button>
       </div>
       
       <div>
-        <a href="#" class="dropLink3">About Gym</a>
+        <a href="#" class="dropLink3">
+          <img src="../Images/downicon.png" class="search">
+        </a>
       </div>
 
 
     </div>
 
-	<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;margin-left: 10px;">Register</button>
+	<!-- <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;margin-left: 10px;">Register</button> -->
 	<a href="logout.php"><button style="width: auto;">logout</button></a>
   <a href="add_pending.php"><button style="width: auto;">add pending</button></a>
 <input type="text" name="string" id="string" placeholder="Search by name or id....">

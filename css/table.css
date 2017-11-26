@@ -20,6 +20,13 @@
     margin-top: 0px;
 }
 
+.downicon{
+    height: 35px;
+    border-radius: 0px;
+    outline: none;
+    margin-top: 2px;
+}
+
 .search:hover {
     height: 45px;
 }

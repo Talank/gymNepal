@@ -25,6 +25,10 @@ button {
     background-color: #f44336;
 }
 
+.register{
+    background:rgba(255,255,255,0);
+}
+
 /* Float cancel and signup buttons and add an equal width */
 .cancelbtn,.signupbtn {float:left;width:50%}
 
