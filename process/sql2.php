@@ -20,7 +20,7 @@
 
   if(isset($_POST['name']))
   {
-  	$name=$_POST['name'];
+  	$name=$conn->mysqli_real_escape_string($_POST['name']);
   	if(!empty($name))
   	{
 
