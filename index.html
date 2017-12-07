@@ -1,45 +1,38 @@
-<html>
-<head>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Bulls Gym</title>
-	<link rel="shortcut icon" href="Images/bulls.png" />
-	<style type="text/css">
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<base href="http://localhost/gymNepal/">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="Images/bulls.png" />
+    <title>Bulls Gym</title>
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap-3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="signin.css" rel="stylesheet">
 
-#content {
-	background-color: transparent;
+  </head>
 
-	background-size: 2em;
-	width:40%;
-	height: 20%;
+  <body>
 
-}
-	</style>
-	<link rel="stylesheet" type="text/css" href="design.css">
-	<link rel="stylesheet" type="text/css" href="css/login.css">
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-	
-</head>
-<body>
-<div class="container">
+    <div class="container">
 
-<div id="content"></div>
-	<div class="center sm-right">
-		<div class="message">
-			<p>Login</p>
-		</div>		
-		<div class="wrapper">
-			<form class="form" method="post" action="process/login-process.php">
-				<input type="text" name="username" placeholder="username">
-				<input type="password" name="password" placeholder="password">
-				<input type="submit" name="login" value="login" id="submit">
-			</form>
-			<div class="container_footer">
-				<p><a href="#">Forgot password?</a></p>
-				<p><a href="pages/register.html">Register</a></p>
-			</div>
-		</div>
-	</div>
-</div>
+      <form class="form-signin" method="post" action="process/login-process.php">
+        <h2 class="form-signin-heading">Please sign in</h2>
+        <label>User Name</label>
+        <input type="text" id="inputUsername" name="username"  class="form-control" placeholder="Email address" required autofocus>
+        <label>Password</label>
+        <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" required>
+    
+        <button class="btn btn-lg btn-primary btn-block" type="submit" name="login" value="login">Sign in</button>
+      </form>
 
-</body>
+    </div> <!-- /container -->
+
+
+
+  </body>
 </html>
