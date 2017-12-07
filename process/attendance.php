@@ -19,6 +19,7 @@ $num=mysqli_num_rows($result);
       $ampm2=  $time2_hour < 12 ? 'am' : 'pm';
 
        $time1_hour = $ampm1=='pm' ? ($time1_hour-12) : ($time1_hour);
+       //$time2_hour= $ampm2=='pm' ? ($time2_hour-12) : ($time2_hour);
 
        $sec=0;
        $time1 = date_create("$time1_hour:$time1_min:$sec");
