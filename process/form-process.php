@@ -42,7 +42,7 @@ echo "Date Calculated:".$plan;
    $result3=mysqli_query($conn,$stmt3);
 
    if($result && $result2 && $result3){
-    header("location:../process/search.php");
+   // header("location:../process/search.php");
    }
    else{
     echo "sorry";
