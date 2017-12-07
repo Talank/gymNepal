@@ -15,6 +15,10 @@ include "../pages/connect.php";
         $result2=mysqli_query($conn,$stmt2);
         $row2=mysqli_fetch_array($result2);
         $date=date_create($row2['duedate']);
+		$todayDate=date_create(date('y-m-d',time()));
+		if((date_diff($date,$todayDate))->format("%R%a")>0) {//Check user schedule
+			$date=$todayDate;//Change the date to current as user is behind schedule
+		}
         if($plan==0){
           date_add($date,date_interval_create_from_date_string("0 months"));
         }
