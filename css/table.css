@@ -2,7 +2,7 @@
     position: relative;
     margin: 0 auto;
     width: 75%;
-    height: 64px;
+    height: 70px;
     background-color: #212a34;
     /*text-align: center;*/
 }
@@ -11,6 +11,24 @@
     left: 15px;
     position: absolute;
     /*left: 100px;*/
+}
+
+.search{
+    height: 35px;
+    border-radius: 0px;
+    outline: none;
+    margin-top: 0px;
+}
+
+.downicon{
+    height: 35px;
+    border-radius: 0px;
+    outline: none;
+    margin-top: 2px;
+}
+
+.search:hover {
+    height: 45px;
 }
 
 .dropLink2 {
@@ -46,12 +64,13 @@
     margin-top: 1px;  
 }
 
-.nav button:hover{
+/*.nav button:hover{
     font-size: 27.5px;
-}
+}*/
 
 /* Dropdown button */
 .dropLink1 .dropbtn { 
+    height: 
     border: none;
     outline: none;
     color: white;
@@ -88,6 +107,16 @@
 .dropLink1:hover .dropdown-content1 {
   display: block;
 }
+
+#string{
+    width: 90%;
+    margin-left: 5%;
+}
+
+#string:focus{
+    border-color: blue;
+}
+
 
 #t1{
     position: relative;
@@ -170,6 +199,22 @@ body{
      width: 18px;
      height: 16px;
 }
+
+/*************Hidding the reduced table at first by default*****************/
+/*#t1InMedia{
+    display:none;
+}
+
+.trInMedia{
+    display: none;
+}
+
+.trInComputer{
+    display: inline;
+}*/
+
+
+
 /*****************For making it responsive in mobile view*******************/
 @media screen and (max-width: 500px){
     .nav{
@@ -224,4 +269,21 @@ body{
     .dropLink1:hover .dropdown-content1 {
       display: block;
     }
+
+    /************************Hide extended table in mobile view*********************/
+    /*#t1{
+        display: none;
+    }*/
+
+   /* #t1InMedia{
+        display: inline;
+    }
+
+    .trInMedia{
+        display: inline;
+    }
+
+    .trInComputer{
+        display: none;
+    }*/
 }

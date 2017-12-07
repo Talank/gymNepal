@@ -7,13 +7,14 @@ $stmt="SELECT * from `information` where user_id=$id";
 $result=mysqli_query($conn,$stmt);
 $row=mysqli_fetch_array($result);
 echo "<div>
-        Info about registration_id:-$id
-       <ol>
-       <li><b>phone- $row[phone]</b></li>
-       <li><b>dob- $row[dob]</b></li>
-       <li><b>temp address- $row[temporay_address]</b></li>
-       <li><b>perm address- $row[permant_address]</b></li>
-       <li><b>Occupation -$row[occupation]</b></li>
-       </ol>
+        <b>Info</b><hr>
+       <table>
+       <tr><td><b>Reg_id-</b> </td><td><b><mark>$row[user_id]</mark></b></td></tr>
+       <tr><td><b>phone-</b> </td><td><b><mark>$row[phone]</mark></b></td></tr>
+       <tr><td><b>dob-</b> </td><td><b><mark>$row[dob]</mark></b></td></tr>
+       <tr><td><b>temp address-</b></td><td><b><mark>$row[temporay_address]</mark></b></td></tr>
+       <tr><td><b>perm address-<b></td><td><b> <mark>$row[permant_address]</mark></b></td></tr>
+       <tr><td><b>Occupation -<b></td><td><b><mark>$row[occupation]</mark></b></td></tr>
+       </table>
       </div>";
 ?>

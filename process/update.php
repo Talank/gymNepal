@@ -1,13 +1,13 @@
 <?php
 session_start();
- $plan=$_POST['date'];
- $_SESSION['user_id']=$user_id=$_POST['user_id'];
- $_SESSION['due']=$dueAmount=$_POST['dueAmount'];
+$plan=$_POST['date'];
+$_SESSION['user_id']=$user_id=$_POST['user_id'];
+$_SESSION['due']=$dueAmount=$_POST['dueAmount'];
+//$_SESSION['amount']=$_POST['amount'];
+$amount=$_POST['amount'];
 
- 
-
- echo $firstname=$_POST['firstname'];
- echo $lastname=$_POST['lastname'];
+echo $firstname=$_POST['firstname'];
+echo $lastname=$_POST['lastname'];
 include "../pages/connect.php";
 	
 	   if(!(empty($firstname)) || !(empty($lastname))){
@@ -47,7 +47,7 @@ include "../pages/connect.php";
 		}
 
 		//if (!is_nan($dueAmount)) {
-			$stmt3="select due from duebalance where user_id =$user_id";
+			$stmt3="select * from duebalance where user_id =$user_id";
 			$result3=mysqli_query($conn,$stmt3);
 			$nums=mysqli_num_rows($result3);
 			
@@ -62,7 +62,7 @@ include "../pages/connect.php";
 			
 			$result4=mysqli_query($conn,$stmt4);
 			if($result4){
-				header("location:bill.php");
+				header("location:bill.php?amount=$amount");
 			}
 		// }
 		// else

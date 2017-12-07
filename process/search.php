@@ -30,7 +30,8 @@ else{
     <div class="nav">
     
       <div class="dropLink1">
-        <button class="dropbtn">view users 
+        <button class="dropbtn">
+          <img src="../Images/search_icon.png" class="search"> 
         </button>
         <div class="dropdown-content1">
           <a href="view-users.php">view by date</a>
@@ -43,75 +44,76 @@ else{
       </div>
       
       <div class="dropLink2">
-        <a href="#">Report</a>
-        
+        <button onclick="document.getElementById('id01').style.display='block'" class="register">
+          <img src="../Images/register.jpg" class="search">
+        </button>
       </div>
       
       <div>
-        <a href="#" class="dropLink3">About Gym</a>
+        <a href="#" class="dropLink3">
+          <img src="../Images/downicon.png" class="search">
+        </a>
       </div>
 
 
     </div>
 
-	<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;margin-left: 10px;">Register</button>
+	<!-- <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;margin-left: 10px;">Register</button> -->
 	<a href="logout.php"><button style="width: auto;">logout</button></a>
   <a href="add_pending.php"><button style="width: auto;">add pending</button></a>
 <input type="text" name="string" id="string" placeholder="Search by name or id....">
 <div class="container"><div id="content"></div></div>
 
-<div id="id01" class="modal">
-  <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Form">×</span>
-  <form class="modal-content animate" action="form-process.php" method="post" enctype="multipart/form-data">
-    <div class="container">
-      <label><b class="b1">Firstname</b></label>
-      <input type="text" placeholder="firstname" name="firstname" required>
+  <div id="id01" class="modal">
+    <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Form">×</span>
+    <form class="modal-content animate" action="form-process.php" method="post" enctype="multipart/form-data">
+      <div class="container">
+        <label><b class="b1">Firstname</b></label>
+        <input type="text" placeholder="firstname" name="firstname" required>
 
-      <label><b class="b1">Lastname</b></label>
-      <input type="text" placeholder="lastname" name="lastname" required>
+        <label><b class="b1">Lastname</b></label>
+        <input type="text" placeholder="lastname" name="lastname" required>
 
-      <label><b class="b1">Phone</b></label>
-      <input type="text" placeholder="phone number" name="phone" maxlength="10" minlength="10" required>
+        <label><b class="b1">Phone</b></label>
+        <input type="text" placeholder="phone number" name="phone" maxlength="10" minlength="10" required>
 
-      <label><b class="b1">Dob</b></label>
-      <input type="text" placeholder="Date of birth(y-m-d)" name="dob" required>
+        <label><b class="b1">Dob</b></label>
+        <input type="text" placeholder="Date of birth(y-m-d)" name="dob" required>
 
-      <label><b class="b1">Temporary address</b></label>
-      <input type="text" placeholder="Temporary address" name="temp_address" required>
+        <label><b class="b1">Temporary address</b></label>
+        <input type="text" placeholder="Temporary address" name="temp_address" required>
 
-      <label><b class="b1">Permanent address</b></label>
-      <input type="text" placeholder="Permanent address" name="perm_address" required>
+        <label><b class="b1">Permanent address</b></label>
+        <input type="text" placeholder="Permanent address" name="perm_address" required>
 
-      <!-- <label><b class="b1">Plan</b></label><br><br>
-      <input type="date" placeholder="Plan" name="plan" required><br><br> -->
+        <!-- <label><b class="b1">Plan</b></label><br><br>
+        <input type="date" placeholder="Plan" name="plan" required><br><br> -->
 
-      <label><b class="b1">Plan</b>
-        <select name="plan">
-           <option value="1" selected="selected">1 month</option>
-           <option value="3">3 month</option>
-           <option value="6">6 month</option>
-           <option value="12">12 month</option>
-        </select>
-      </label><br><br>
+        <label><b class="b1">Plan</b>
+          <select name="plan">
+             <option value="1" selected="selected">1 month</option>
+             <option value="3">3 month</option>
+             <option value="6">6 month</option>
+             <option value="12">12 month</option>
+          </select>
+        </label><br><br>
 
-      <label><b class="b1">Issue date</b></label><br><br>
-      <input type="date" placeholder="issue date" name="issue" required><br><br>
+        <label><b class="b1">Issue date</b></label><br><br>
+        <input type="date" placeholder="issue date" name="issue" required><br><br>
 
-      <label><b class="b1">Occupation</b></label>
-      <input type="text" placeholder="occupation" name="occupation" required>
+        <label><b class="b1">Occupation</b></label>
+        <input type="text" placeholder="occupation" name="occupation" required>
 
-      <input type="file" name="fileToUpload" id="fileToUpload">
-      <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+        <input type="file" name="fileToUpload" id="fileToUpload">
+        <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
 
-      <div class="clearfix">
-        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-        <button type="submit" class="signupbtn" name="submit">Register</button>
+        <div class="clearfix">
+          <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+          <button type="submit" class="signupbtn" name="submit">Register</button>
+        </div>
       </div>
-    </div>
-  </form>
-</div>
-
-
+    </form>
+  </div>
 
 </body>
 </html>
