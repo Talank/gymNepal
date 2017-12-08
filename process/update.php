@@ -26,6 +26,7 @@ include "../pages/connect.php";
 		*/
 		if($plan!=0) {
 			date_add($date,date_interval_create_from_date_string($plan." months"));
+			$plan=date_format($date,"Y-m-d");
 			$stmt="update users set duedate='$plan',firstname='$firstname',lastname='$lastname' where user_id=$user_id";
 			$result=mysqli_query($conn,$stmt);
 			if($result){

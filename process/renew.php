@@ -83,6 +83,7 @@
 		var enteredAmount;
 		//Get the amount ,so that we can clear due ,even if no month is selected
 		document.getElementById("amount").value = amount;
+		document.getElementById("dueAmount").value =0;
 		function showAmount(){
 			var months = document.getElementById('selectMonths').value;
 			if(months=="0"){

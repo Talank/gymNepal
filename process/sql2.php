@@ -26,14 +26,15 @@
 
       include"../pages/connect.php";
       $stmt=" SELECT *,datediff(duedate,now()) as count from `users`,`information`,`status`  where (users.firstname like '%$name%' ||users.user_id ='$name') and information.user_id=users.user_id and users.user_id=status.user_id";
-      $result=mysqli_query($conn,$stmt);
-
+    //  $stmt="select * from users where firstname like '%$name'";
+	  $result=mysqli_query($conn,$stmt);
+	//	$todayDate=date_create(date('y-m-d',time()));
       $num=mysqli_num_rows($result);
-
+		echo "Number:".$num;
       $suffix=($num!=1 && $num!=0)?'s':'';
             echo "<p align=center>your have got ".$num." result".$suffix."<br>";
-
-            // echo"<div class='container'>";
+		if($num>0) {
+			// echo"<div class='container'>";
 
             echo"<table id=t1><tr><th>Reg no.</th>
                 <th>Dp</th>
@@ -51,7 +52,7 @@
 
       while($row=mysqli_fetch_array($result))
      {
-            
+      //  $count=date_diff($row['duedate'],$todayDate);
         echo"<tr>";
           echo "<td>" .$row['user_id']."</td>";
           echo "<td><img src=../Images/$row[picture] height=70 width=70 style=padding:10px;></td>";
@@ -112,6 +113,9 @@
       }
 
       echo"</table>";
+		}
+
+            
 
       // echo "</div>";
       if($num<1)

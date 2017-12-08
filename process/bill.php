@@ -2,7 +2,8 @@
 	session_start();
 	$user_id=$_SESSION['user_id'];
 	include"../pages/connect.php";
-	$result=mysqli_query($conn,"SELECT * from users left join duebalance on users.user_id=duebalance.user_id and users.user_id=$user_id");
+	$result=mysqli_query($conn,"SELECT * from users where user_id=$user_id");
+	//left join duebalance on users.user_id=duebalance.user_id and users.
 	$row=mysqli_fetch_array($result);
 
 	$stmt1="select due from duebalance where user_id=$user_id";
