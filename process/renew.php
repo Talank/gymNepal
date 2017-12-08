@@ -83,6 +83,7 @@
 		var amount=0;
 		var preDue;
 		var enteredAmount;
+		//Get the amount ,so that we can clear due ,even if no month is selected
 		document.getElementById("amount").value = amount;
 		function showAmount(){
 			var months = document.getElementById('selectMonths').value;
@@ -111,7 +112,9 @@
 				dueAmount=0;
 			document.getElementById("dueAmount").value = dueAmount;
 		}
-		
+		/*
+		*This function is called if a user request to clear his old deu amount
+		*/
 		function showNetAmount() {
 			if(document.getElementById('cutPre').checked) {
 				var preDueAmount=document.getElementById('preDueAmount').value;

@@ -20,7 +20,35 @@ include "../pages/connect.php";
 		if((date_diff($date,$todayDate))->format("%R%a")>0) {//Check user schedule
 			$date=$todayDate;//Change the date to current as user is behind schedule
 		}
-        if($plan==0){
+		/*
+		*Check For $plan values
+		*If $plan is 0,the the user is just trying to clear his due
+		*Otherwise the user is increasing his due date
+		*/
+		if($plan!=0) {
+			date_add($date,date_interval_create_from_date_string($plan." months"));
+			$stmt="update users set duedate='$plan',firstname='$firstname',lastname='$lastname' where user_id=$user_id";
+			$result=mysqli_query($conn,$stmt);
+			if($result){
+				//$message="Date is now updated to ".$duedate."";
+				/*
+				*From calculations $totalDue is always +ve so add to the database directly
+				*A if statement can be used if felt any doubt
+				*If the $query is true,the user already had a deu and his due is not updated
+				*Otherwise the user has kept deu,and it needs to be inserted to the duebalance table
+				*/
+				$query=mysqli_query($conn,"update duebalance set due=$totalDue where user_id =$user_id");
+				if(!$query) {
+					mysqli_query($conn,"insert into duebalance values ($user_id,$totalDue)");
+				}
+				header("location:bill.php?amount=$amount");
+			} else {
+				echo "error";
+			}
+		}
+		//Coding Redundancy
+		
+   /*     if($plan==0){
           date_add($date,date_interval_create_from_date_string("0 months"));
         }
 		else if ($plan == 1) {
@@ -35,24 +63,10 @@ include "../pages/connect.php";
 		else{
 		  date_add($date,date_interval_create_from_date_string("12 months"));
 		}
-		echo $plan=date_format($date,"Y-m-d");
+		echo $plan=date_format($date,"Y-m-d");*/
 
 
-		$stmt="update users set duedate='$plan',firstname='$firstname',lastname='$lastname' where user_id=$user_id";
-		$result=mysqli_query($conn,$stmt);
-		if($result){
-			//$message="Date is now updated to ".$duedate."";
-			if($totalDue>=0) {
-				$query=mysqli_query($conn,"update duebalance set due=$totalDue where user_id =$user_id");
-				if(!$query) {
-					mysqli_query($conn,"insert into duebalance values ($user_id,$totalDue)");
-				}
-			}
-			header("location:bill.php?amount=$amount");
-		}
-		else{
-			echo "error";
-		}
+		
 		//The following code is to be removed
 
 	/*	//if (!is_nan($dueAmount)) {
