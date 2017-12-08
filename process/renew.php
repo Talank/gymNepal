@@ -7,6 +7,7 @@
 	<script type="text/javascript" src="../javascript/showup.js">
 	</script>
 
+<<<<<<< HEAD
 	<script type="text/javascript">
 		//code for showing amount to be paid in the input field
 		var amount;
@@ -37,6 +38,8 @@
 		}
 	</script>
 
+=======
+>>>>>>> f42a94dc8eeca9e9d9dd65d3be409a1a17c7d14b
 </head>
 <body bgcolor="#FAFAFA">
 	<?php
@@ -47,6 +50,11 @@
 	$result=mysqli_query($conn,$stmt)
 			or die("Error : Sorry ! can not execute the process");
 	$row=mysqli_fetch_array($result);
+	
+	$query=mysqli_query($conn,"select due from duebalance  where user_id=$user_id LIMIT 1");
+	$query_data=mysqli_fetch_array($query);
+	$preDueAmount=$query_data['due'];
+	echo "Due AMount :".$query_data['due'];
 
 	?>
 <div id="div1">
@@ -85,9 +93,22 @@
     <input type="text" name="amount" id="amount" oninput="showDueAmount()">
     <br><br>
 
+<<<<<<< HEAD
     <b>DUE BALANCE: </b>
     <input type="number" name="dueAmount" value="0" id="dueAmount">
+=======
+    <b>CURRENT DUE AMOUNT: </b>
+    <input type="number" name="dueAmount" id="dueAmount" readonly>
+>>>>>>> f42a94dc8eeca9e9d9dd65d3be409a1a17c7d14b
     <!-- <span id="dueAmount" style="color: white;"></span> -->
+    <br><br>
+	
+	<b>CUT PREVIOUS DUE:</b>
+    <input type="checkbox" name="cutPrevious" id="cutPre" onchange="showNetAmount()">
+    <br><br>
+	
+	<b>PRIEVIOUS DUE AMOUNT:</b>
+    <input type="text" name="preDueAmount" <?php echo "value=".'"'.$preDueAmount.'"'  ?> id="preDueAmount" readonly>
     <br><br>
 
 	<button style="margin-left: 10px;"><b>update</b></button>
@@ -95,4 +116,54 @@
 	<a href="search.php"><input type="button" value="back"></a>
 </div>
 </body>
+	<script type="text/javascript">
+		//code for showing amount to be paid in the input field
+		var amount=0;
+		var preDue;
+		var enteredAmount;
+		document.getElementById("amount").value = amount;
+		function showAmount(){
+			var months = document.getElementById('selectMonths').value;
+			if(months=="0"){
+			      amount =0;
+			    }
+				else if (months == "1") {
+				  amount =700;
+				}
+				else if(months =="3"){
+				  amount =2100;
+				}
+				else if(months=="6"){  
+				  amount =4200;
+				}
+				else{
+				  amount =8400;
+				}
+				document.getElementById("amount").value = amount;
+		}
+
+		function showDueAmount(){
+			enteredAmount= document.getElementById("amount").value;
+			var dueAmount = amount - enteredAmount;
+			if(dueAmount<0)//There is no due and the money is excess
+				dueAmount=0;
+			document.getElementById("dueAmount").value = dueAmount;
+		}
+		
+		function showNetAmount() {
+			if(document.getElementById('cutPre').checked) {
+				var preDueAmount=document.getElementById('preDueAmount').value;
+				preDue=preDueAmount;
+				var excess=enteredAmount-amount;
+				if(excess>0) {
+					var dueAmount=preDueAmount-excess;
+					if(dueAmount<0)
+						dueAmount=0;
+					document.getElementById('preDueAmount').value=dueAmount;	
+				}
+			} else {
+				document.getElementById('preDueAmount').value=preDue;
+			}
+		}
+	</script>
 </html>
