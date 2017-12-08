@@ -20,6 +20,8 @@
 	$query=mysqli_query($conn,"select due from duebalance  where user_id=$user_id LIMIT 1");
 	$query_data=mysqli_fetch_array($query);
 	$preDueAmount=$query_data['due'];
+	if($preDueAmount==null)
+		$preDueAmount=0;
 
 	?>
 <div id="div1">
