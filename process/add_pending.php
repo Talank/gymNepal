@@ -14,7 +14,7 @@
 	<div id="content"></div>
 
 </div>
-<button>back</button>
+<a href="search.php"><button>back</button></a>
 
  
 </body>

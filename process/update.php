@@ -5,6 +5,7 @@ $_SESSION['user_id']=$user_id=$_POST['user_id'];
 $_SESSION['due']=$dueAmount=$_POST['dueAmount'];
 //$_SESSION['amount']=$_POST['amount'];
 $amount=$_POST['amount'];
+$totalDue=$_POST['preDueAmount']+$_POST['dueAmount'];
 
 echo $firstname=$_POST['firstname'];
 echo $lastname=$_POST['lastname'];
@@ -15,6 +16,10 @@ include "../pages/connect.php";
         $result2=mysqli_query($conn,$stmt2);
         $row2=mysqli_fetch_array($result2);
         $date=date_create($row2['duedate']);
+		$todayDate=date_create(date('y-m-d',time()));
+		if((date_diff($date,$todayDate))->format("%R%a")>0) {//Check user schedule
+			$date=$todayDate;//Change the date to current as user is behind schedule
+		}
         if($plan==0){
           date_add($date,date_interval_create_from_date_string("0 months"));
         }
@@ -34,19 +39,23 @@ include "../pages/connect.php";
 
 
 		$stmt="update users set duedate='$plan',firstname='$firstname',lastname='$lastname' where user_id=$user_id";
-			
 		$result=mysqli_query($conn,$stmt);
 		if($result){
-			$message="Date is now updated to ".$duedate."";
-			
-			echo "<script type='text/javascript'>alert('$message');</script>";
-			header("location:bill.php");
+			//$message="Date is now updated to ".$duedate."";
+			if($totalDue>=0) {
+				$query=mysqli_query($conn,"update duebalance set due=$totalDue where user_id =$user_id");
+				if(!$query) {
+					mysqli_query($conn,"insert into duebalance values ($user_id,$totalDue)");
+				}
+			}
+			header("location:bill.php?amount=$amount");
 		}
 		else{
 			echo "error";
 		}
+		//The following code is to be removed
 
-		//if (!is_nan($dueAmount)) {
+	/*	//if (!is_nan($dueAmount)) {
 			$stmt3="select * from duebalance where user_id =$user_id";
 			$result3=mysqli_query($conn,$stmt3);
 			$nums=mysqli_num_rows($result3);
@@ -63,7 +72,7 @@ include "../pages/connect.php";
 			$result4=mysqli_query($conn,$stmt4);
 			if($result4){
 				header("location:bill.php?amount=$amount");
-			}
+			}*/
 		// }
 		// else
 		// 	echo "Due not a number";
