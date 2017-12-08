@@ -38,8 +38,7 @@
 		}
 	</script>
 
-=======
->>>>>>> f42a94dc8eeca9e9d9dd65d3be409a1a17c7d14b
+
 </head>
 <body bgcolor="#FAFAFA">
 	<?php
@@ -93,13 +92,12 @@
     <input type="text" name="amount" id="amount" oninput="showDueAmount()">
     <br><br>
 
-<<<<<<< HEAD
+
     <b>DUE BALANCE: </b>
     <input type="number" name="dueAmount" value="0" id="dueAmount">
-=======
     <b>CURRENT DUE AMOUNT: </b>
     <input type="number" name="dueAmount" id="dueAmount" readonly>
->>>>>>> f42a94dc8eeca9e9d9dd65d3be409a1a17c7d14b
+
     <!-- <span id="dueAmount" style="color: white;"></span> -->
     <br><br>
 	
