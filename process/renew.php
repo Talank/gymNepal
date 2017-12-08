@@ -12,8 +12,8 @@
 		var amount;
 		function showAmount(){
 			var months = document.getElementById('selectMonths').value;
-			if(months=="0"){
-			      amount ='000';
+				if(months=="0"){
+			      amount =000;
 			    }
 				else if (months == "1") {
 				  amount =700;
@@ -86,7 +86,7 @@
     <br><br>
 
     <b>DUE BALANCE: </b>
-    <input type="number" name="dueAmount" id="dueAmount">
+    <input type="number" name="dueAmount" value="0" id="dueAmount">
     <!-- <span id="dueAmount" style="color: white;"></span> -->
     <br><br>
 
