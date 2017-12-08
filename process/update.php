@@ -38,8 +38,8 @@ include "../pages/connect.php";
 				*Otherwise the user has kept deu,and it needs to be inserted to the duebalance table
 				*/
 				$query=mysqli_query($conn,"update duebalance set due=$totalDue where user_id =$user_id");
-				if(!$query) {
-					mysqli_query($conn,"insert into duebalance values ($user_id,$totalDue)");
+				if($query) {
+					$query=mysqli_query($conn,"insert into duebalance(user_id,due) values ($user_id,$totalDue)");
 				}
 				header("location:bill.php?amount=$amount");
 			}
