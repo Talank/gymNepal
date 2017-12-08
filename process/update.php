@@ -6,9 +6,8 @@ $_SESSION['due']=$dueAmount=$_POST['dueAmount'];
 //$_SESSION['amount']=$_POST['amount'];
 $amount=$_POST['amount'];
 $totalDue=$_POST['preDueAmount']+$_POST['dueAmount'];
-
-echo $firstname=$_POST['firstname'];
-echo $lastname=$_POST['lastname'];
+$firstname=$_POST['firstname'];
+$lastname=$_POST['lastname'];
 include "../pages/connect.php";
 	
 	   if(!(empty($firstname)) || !(empty($lastname))){
@@ -42,9 +41,10 @@ include "../pages/connect.php";
 					mysqli_query($conn,"insert into duebalance values ($user_id,$totalDue)");
 				}
 				header("location:bill.php?amount=$amount");
-			} else {
-				echo "error";
 			}
+		} else {//Update user due amount and redirect to bill.php
+			$query=mysqli_query($conn,"update duebalance set due=$totalDue where user_id =$user_id");
+			header("location:bill.php?amount=$amount");
 		}
 		//Coding Redundancy
 		
