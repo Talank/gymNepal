@@ -51,7 +51,7 @@
 <p class="p2">Due amount:<b>Rs.<?php echo $due;?></b></p>	
 <p class="p2">Net Amount:<b> Rs. <?php echo ($_GET['amount']-$_GET['amount']*0.01*$_GET['discount']);?></b>
 <p class="p2">Tender:<b>Rs.<?php echo $_GET['tender'];?></b></p>	
-<p class="p2">Return:<b>Rs.<?php if($_GET['tender']<=$_GET['amount']) echo "0"; else echo ($_GET['tender']-$_GET['amount']);?></b></p>	
+<p class="p2">Return:<b>Rs.<?php if($_GET['tender']<=$_GET['amount']) echo "0"; else echo ($_GET['tender']-($_GET['amount']-$_GET['amount']*0.01*$_GET['discount']));?></b></p>	
 <p class="p2">Signature-<span style="text-decoration: underline; white-space: pre;">                  </span></p>
 <button onclick="printPage()" id="print">print</button>
 <a href="destroy_session.php"><button id="back">back</button></a>

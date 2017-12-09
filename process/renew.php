@@ -3,6 +3,7 @@
 <head>
 	<title>Renew</title>
 	<link rel="stylesheet" type="text/css" href="../css/renewDesign.css">
+	 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 	<script src="../jquery-3.1.1.min.js"></script>
 	<script type="text/javascript" src="../javascript/showup.js">
 	</script>
@@ -24,9 +25,9 @@
 		$preDueAmount=0;
 
 	?>
-<div id="div1">
-<form action="update.php" method="post">
-	<img src="../Images/<?php echo $row['picture'];?>" id="user_image"><br>
+	<div class="jumbotron">
+		<form action="update.php" class="" method="post">
+		<img src="../Images/<?php echo $row['picture'];?>" id="user_image">
 	<table>
 	<b>REGISTRATION ID: <?php echo $_GET['id'];?></b><br><br>
 	<b>Name: <?php echo $row['firstname'];  echo " ".$row['lastname'];?></b> &nbsp;
@@ -82,6 +83,13 @@
 
 	<button style="margin-left: 10px;"><b>update</b></button>
 	</form>
+	
+	
+	</div>
+	
+	
+<div id="div1">
+
 	<a href="search.php"><input type="button" value="back"></a>
 </div>
 </body>
