@@ -2,9 +2,7 @@
 <html>
 <head>
 	<title>Renew</title>
-	<link rel="stylesheet" type="text/css" href="../css/renewDesign.css">
 	 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-	<script src="../jquery-3.1.1.min.js"></script>
 	<script type="text/javascript" src="../javascript/showup.js">
 	</script>
 </head>
@@ -25,73 +23,116 @@
 		$preDueAmount=0;
 
 	?>
+	<div class="well-sm text-center">
+		<h3>GYM Counter</h3>
+	</div>
+	
+	
+	<div class="container">
 	<div class="jumbotron">
 		<form action="update.php" class="" method="post">
-		<img src="../Images/<?php echo $row['picture'];?>" id="user_image">
-	<table>
-	<b>REGISTRATION ID: <?php echo $_GET['id'];?></b><br><br>
-	<b>Name: <?php echo $row['firstname'];  echo " ".$row['lastname'];?></b> &nbsp;
-	<img src="../Images/right.png" width="22" height="20" id="b11">
-	<img src="../Images/wrong.png" width="22" height="20" id="b22">
+		<img src="../Images/<?php echo $row['picture'];?>" class="img-rounded center-block">
+	<div class="alert alert-info text-center">
+		<div class="row">
+			<label>REGISTRATION ID: <?php echo $_GET['id'];?></label>
+		</div>
+		<div class="row">
+			<label>Name: <?php echo $row['firstname'];  echo " ".$row['lastname'];?></label> &nbsp;
+			<img src="../Images/right.png" width="22" height="20" id="b11">
+			<img src="../Images/wrong.png" width="22" height="20" id="b22">
+		</div>
+		
+		<div class="row">
+			<label>Attendance:<?php echo $row['value']; ?></label>
+		</div>
+		
+		<div class="row">
+			<label>DUE DATE:<?php echo $row['duedate'];?></label>
+		</div>
+	</div>
 	
     <div id="div2" hidden>
     	<input name="user_id" value="<?php echo $_GET['id'];?>" hidden>
     	<input type="text" placeholder="Firstname" name="firstname" value="<?php echo $row['firstname'];?>" required>
     	<input type="text" placeholder="Lastname" name="lastname" value="<?php echo $row['lastname'];?>" required>
     </div>
-	<br><br>
 	
-    <b>Attendance:<?php echo $row['value']; ?></b><br><br>
-    <!-- <label><b>NEW DATE:</b><input type="date" id="myDate" value=<?php //echo $row['duedate']; ?> name="date"></label><br> -->
 
-    <span id="myDate"><b>DUE DATE: </b><?php echo $row['duedate'];?></span><br><br>
-
-    <label><b id="myDate">NEW DATE</b>
-        <select name="date" id="selectMonths" onchange ="showAmount()">
-        	<option value="0" selected="selected">0 month</option>
-           <option value="1" >1 month</option>
-           <option value="3">3 month</option>
-           <option value="6">6 month</option>
-           <option value="12">12 month</option>
-        </select>
-    </label>
-    <br><br>
-
-    <b>AMOUNT TO PAY:</b>
-    <input type="number" name="amount" id="amount" readonly>
-    <br><br>
+	<div class="col-sm-12">
+		<div class="row">
+			<div class="col-sm-6 form-group">
+				<label>NEW DATE</label>
+				<select name="date" id="selectMonths" onchange ="showAmount()">
+					<option value="0" selected="selected">0 month</option>
+					<option value="1" >1 month</option>
+					<option value="3">3 month</option>
+					<option value="6">6 month</option>
+					<option value="12">12 month</option>
+				</select>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col-sm-6 form-group">
+				<label>AMOUNT TO PAY:</label>
+				<input class="form-control"  type="number" name="amount" id="amount" readonly>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6 form-group">
+				<label>TENDER:</label>
+				<input class="form-control" type="number" name="tender" id="tender" oninput="showDueAmount()">
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col-sm-6 form-group">
+				<label>DISCOUNT:</label>
+				<input class="form-control" type="number" name="discount" min="0" maxlength="2" id="discount">%
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col-sm-6 form-group">
+				<label>CURRENT DUE AMOUNT: </label>
+				<input class="form-control" type="number" name="dueAmount" id="dueAmount" readonly>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col-sm-6 form-group">
+				<label>CUT PREVIOUS DUE:</label>
+				<input  type="checkbox" name="cutPrevious" id="cutPre" onchange="showNetAmount()">
+			</div>
+		
+		</div>
+		
+		<div class="row">
+			<div class="col-sm-6 form-group">
+				<label>PRIEVIOUS DUE AMOUNT:</label>
+				 <input class="form-control" type="text" name="preDueAmount" <?php echo "value=".'"'.$preDueAmount.'"'  ?> id="preDueAmount" readonly>
+			</div>
+		
+		</div>
+		
+		
+	</div>
+	<div class="row text-center">
+		<div class="col-sm-6 form-group">
+			<a href="search.php"><button class="btn btn-warning">Back</button></a>
+			<button class="btn btn-primary">Update</button>
+		</div>
+		
+	</div>
 	
-	<b>TENDER:</b>
-    <input type="number" name="tender" id="tender" oninput="showDueAmount()">
-    <br><br>
-	<b>DISCOUNT: </b>
-    <input type="number" name="discount" min="0" maxlength="2" id="discount">%
-	<br>
-    <b>CURRENT DUE AMOUNT: </b>
-    <input type="number" name="dueAmount" id="dueAmount" readonly>
-
-    <!-- <span id="dueAmount" style="color: white;"></span> -->
-    <br><br>
-	
-	<b>CUT PREVIOUS DUE:</b>
-    <input type="checkbox" name="cutPrevious" id="cutPre" onchange="showNetAmount()">
-    <br><br>
-	
-	<b>PRIEVIOUS DUE AMOUNT:</b>
-    <input type="text" name="preDueAmount" <?php echo "value=".'"'.$preDueAmount.'"'  ?> id="preDueAmount" readonly>
-    <br><br>
-
-	<button style="margin-left: 10px;"><b>update</b></button>
 	</form>
 	
 	
 	</div>
-	
-	
-<div id="div1">
+	</div>
 
-	<a href="search.php"><input type="button" value="back"></a>
-</div>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src ="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </body>
 	<script type="text/javascript">
 		//code for showing amount to be paid in the input field
