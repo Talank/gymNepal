@@ -5,12 +5,21 @@ $_SESSION['user_id']=$user_id=$_POST['user_id'];
 $_SESSION['due']=$dueAmount=$_POST['dueAmount'];
 //$_SESSION['amount']=$_POST['amount'];
 $amount=$_POST['amount'];
+$discount=$_POST['discount'];
+$tender=$_POST['tender'];
 $totalDue=$_POST['preDueAmount']+$_POST['dueAmount'];
 $firstname=$_POST['firstname'];
 $lastname=$_POST['lastname'];
 include "../pages/connect.php";
 	
 	   if(!(empty($firstname)) || !(empty($lastname))){
+		$query=mysqli_query($conn,"select due from duebalance where user_id=$user_id LIMIT 1");
+		if($query) {
+			$row=mysqli_fetch_array($query);
+			if(isset($_POST['cutPrevious'])) {
+				$amount+=$row['due'];
+			}
+		}
         $stmt2="select duedate from users where user_id=$user_id";
         $result2=mysqli_query($conn,$stmt2);
         $row2=mysqli_fetch_array($result2);
@@ -41,11 +50,11 @@ include "../pages/connect.php";
 				if($query) {
 					$query=mysqli_query($conn,"insert into duebalance(user_id,due) values ($user_id,$totalDue)");
 				}
-				header("location:bill.php?amount=$amount");
+				header("location:bill.php?amount=$amount&&discount=$discount&&tender=$tender");
 			}
 		} else {//Update user due amount and redirect to bill.php
 			$query=mysqli_query($conn,"update duebalance set due=$totalDue where user_id =$user_id");
-			header("location:bill.php?amount=$amount");
+			header("location:bill.php?amount=$amount&&discount=$discount&&tender=$tender");
 		}
 		//Coding Redundancy
 		

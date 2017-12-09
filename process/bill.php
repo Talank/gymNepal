@@ -46,8 +46,12 @@
 <p class="p2">Registration id- <b><?php echo $row['user_id']; ?> </b> </p>
 <p class="p2">Date of payment-<b><?php echo date("Y-m-d");?></b></p>
 <p class="p2">Status- <b><?php $msg=($due>0)?"not cleared":"clear"; echo $msg;   ?></b></p>
-<p class="p2">Amount Paid:<b> Rs. <?php echo $_GET['amount'];?></b>
-<p class="p2">Due amount:<b><?php echo $due;?></b></p>	
+<p class="p2">Amount To Be Paid:<b> Rs. <?php echo $_GET['amount'];?></b>
+<p class="p2">Discount:<b><?php echo $_GET['discount']."%";?></b>
+<p class="p2">Due amount:<b>Rs.<?php echo $due;?></b></p>	
+<p class="p2">Net Amount:<b> Rs. <?php echo ($_GET['amount']-$_GET['amount']*0.01*$_GET['discount']);?></b>
+<p class="p2">Tender:<b>Rs.<?php echo $_GET['tender'];?></b></p>	
+<p class="p2">Return:<b>Rs.<?php if($_GET['tender']<=$_GET['amount']) echo "0"; else echo ($_GET['tender']-$_GET['amount']);?></b></p>	
 <p class="p2">Signature-<span style="text-decoration: underline; white-space: pre;">                  </span></p>
 <button onclick="printPage()" id="print">print</button>
 <a href="destroy_session.php"><button id="back">back</button></a>

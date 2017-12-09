@@ -57,8 +57,15 @@
     <br><br>
 
     <b>AMOUNT TO PAY:</b>
-    <input type="text" name="amount" id="amount" oninput="showDueAmount()">
+    <input type="number" name="amount" id="amount" readonly>
     <br><br>
+	
+	<b>TENDER:</b>
+    <input type="number" name="tender" id="tender" oninput="showDueAmount()">
+    <br><br>
+	<b>DISCOUNT: </b>
+    <input type="number" name="discount" min="0" maxlength="2" id="discount">%
+	<br>
     <b>CURRENT DUE AMOUNT: </b>
     <input type="number" name="dueAmount" id="dueAmount" readonly>
 
@@ -86,6 +93,8 @@
 		//Get the amount ,so that we can clear due ,even if no month is selected
 		document.getElementById("amount").value = amount;
 		document.getElementById("dueAmount").value =0;
+		document.getElementById("tender").value=0;
+		document.getElementById("discount").value=0;
 		function showAmount(){
 			var months = document.getElementById('selectMonths').value;
 			if(months=="0"){
@@ -107,7 +116,7 @@
 		}
 
 		function showDueAmount(){
-			enteredAmount= document.getElementById("amount").value;
+			enteredAmount= document.getElementById("tender").value;
 			var dueAmount = amount - enteredAmount;
 			if(dueAmount<0)//There is no due and the money is excess
 				dueAmount=0;
