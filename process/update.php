@@ -49,7 +49,6 @@ include "../pages/connect.php";
 				$query=mysqli_query($conn,"update duebalance set due=$totalDue where user_id =$user_id");
 				if($query) {
 					mysqli_query($conn,"insert into duebalance values ($user_id,$totalDue)");
-
 				if($query) {
 					$query=mysqli_query($conn,"insert into duebalance(user_id,due) values ($user_id,$totalDue)");
 				}
@@ -59,6 +58,7 @@ include "../pages/connect.php";
 			$query=mysqli_query($conn,"update duebalance set due=$totalDue where user_id =$user_id");
 			header("location:bill.php?amount=$amount&&discount=$discount&&tender=$tender");
 		}
+	}
 		//Coding Redundancy
 		
    /*     if($plan==0){
@@ -77,11 +77,8 @@ include "../pages/connect.php";
 		  date_add($date,date_interval_create_from_date_string("12 months"));
 		}
 		echo $plan=date_format($date,"Y-m-d");*/
-
-
 		
 		//The following code is to be removed
-
 	/*	//if (!is_nan($dueAmount)) {
 			$stmt3="select * from duebalance where user_id =$user_id";
 			$result3=mysqli_query($conn,$stmt3);
@@ -92,9 +89,7 @@ include "../pages/connect.php";
 				
 			else
 				$stmt4="insert into duebalance values ($user_id,$dueAmount)";
-
 				
-
 			
 			$result4=mysqli_query($conn,$stmt4);
 			if($result4){
@@ -104,5 +99,4 @@ include "../pages/connect.php";
 		// else
 		// 	echo "Due not a number";
 	}
-}
 ?>
