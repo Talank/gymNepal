@@ -6,39 +6,6 @@
 	<script src="../jquery-3.1.1.min.js"></script>
 	<script type="text/javascript" src="../javascript/showup.js">
 	</script>
-
-<<<<<<< HEAD
-	<script type="text/javascript">
-		//code for showing amount to be paid in the input field
-		var amount;
-		function showAmount(){
-			var months = document.getElementById('selectMonths').value;
-				if(months=="0"){
-			      amount =000;
-			    }
-				else if (months == "1") {
-				  amount =700;
-				}
-				else if(months =="3"){
-				  amount =2100;
-				}
-				else if(months=="6"){  
-				  amount =4200;
-				}
-				else{
-				  amount =8400;
-				}
-				document.getElementById("amount").value = amount;
-		}
-
-		function showDueAmount(){
-			var enteredAmount= document.getElementById("amount").value;
-			var dueAmount = amount - enteredAmount;
-			document.getElementById("dueAmount").value = dueAmount;
-		}
-	</script>
-
-
 </head>
 <body bgcolor="#FAFAFA">
 	<?php
@@ -53,7 +20,8 @@
 	$query=mysqli_query($conn,"select due from duebalance  where user_id=$user_id LIMIT 1");
 	$query_data=mysqli_fetch_array($query);
 	$preDueAmount=$query_data['due'];
-	echo "Due AMount :".$query_data['due'];
+	if($preDueAmount==null)
+		$preDueAmount=0;
 
 	?>
 <div id="div1">
@@ -91,10 +59,6 @@
     <b>AMOUNT TO PAY:</b>
     <input type="text" name="amount" id="amount" oninput="showDueAmount()">
     <br><br>
-
-
-    <b>DUE BALANCE: </b>
-    <input type="number" name="dueAmount" value="0" id="dueAmount">
     <b>CURRENT DUE AMOUNT: </b>
     <input type="number" name="dueAmount" id="dueAmount" readonly>
 
@@ -119,7 +83,9 @@
 		var amount=0;
 		var preDue;
 		var enteredAmount;
+		//Get the amount ,so that we can clear due ,even if no month is selected
 		document.getElementById("amount").value = amount;
+		document.getElementById("dueAmount").value =0;
 		function showAmount(){
 			var months = document.getElementById('selectMonths').value;
 			if(months=="0"){
@@ -147,7 +113,9 @@
 				dueAmount=0;
 			document.getElementById("dueAmount").value = dueAmount;
 		}
-		
+		/*
+		*This function is called if a user request to clear his old deu amount
+		*/
 		function showNetAmount() {
 			if(document.getElementById('cutPre').checked) {
 				var preDueAmount=document.getElementById('preDueAmount').value;
