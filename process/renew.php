@@ -3,8 +3,6 @@
 <head>
 	<title>Renew</title>
 	 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-	<script type="text/javascript" src="../javascript/showup.js">
-	</script>
 </head>
 <body bgcolor="#FAFAFA">
 	<?php
@@ -38,7 +36,7 @@
 		</div>
 		<div class="row">
 			<label>Name: <?php echo $row['firstname'];  echo " ".$row['lastname'];?></label> &nbsp;
-			<img src="../Images/right.png" width="22" height="20" id="b11">
+			<img src="../Images/right.png" width="22" height="20" id="b11" onclick="displayField()">
 			<img src="../Images/wrong.png" width="22" height="20" id="b22">
 		</div>
 		
@@ -133,6 +131,7 @@
 
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<script src ="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../javascript/showup.js"></script>
 </body>
 	<script type="text/javascript">
 		//code for showing amount to be paid in the input field
@@ -144,6 +143,11 @@
 		document.getElementById("dueAmount").value =0;
 		document.getElementById("tender").value=0;
 		document.getElementById("discount").value=0;
+		function displayField() {
+			document.getElementById("div2").style.visibility='visible';
+		}
+
+
 		function showAmount(){
 			var months = document.getElementById('selectMonths').value;
 			if(months=="0"){

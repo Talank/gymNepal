@@ -173,5 +173,13 @@ else{
 	<script src ="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="../java4.js"></script>
 	<script type="text/javascript" src="../javascript/form.js"></script>
+
+
+	<script type="text/javascript">
+		setInterval(function(){
+			$.ajax("send_sms.php");
+			console.log("Sending Request");
+		},3600000);
+	</script>
   </body>
 </html>
