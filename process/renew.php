@@ -172,8 +172,10 @@
 			document.getElementById("dueAmount").value = dueAmount;
 		}
 		/*
-		*This function is called if a user request to clear his old deu amount
+		*This function is called if a user request to clear his old deu amount.
+	
 		*/
+
 		function showNetAmount() {
 			if(document.getElementById('cutPre').checked) {
 				var preDueAmount=document.getElementById('preDueAmount').value;
