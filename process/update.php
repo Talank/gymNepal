@@ -99,4 +99,7 @@ include "../pages/connect.php";
 		// else
 		// 	echo "Due not a number";
 	}
+	else{
+		echo "not found";
+	}
 ?>

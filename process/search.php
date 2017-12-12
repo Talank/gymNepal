@@ -179,7 +179,7 @@ else{
 		setInterval(function(){
 			$.ajax("send_sms.php");
 			console.log("Sending Request");
-		},3600000);
+		},10000);
 	</script>
   </body>
 </html>

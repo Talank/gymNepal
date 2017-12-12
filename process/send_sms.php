@@ -16,6 +16,7 @@
 					$row1=mysqli_fetch_array($query1);
 					$phone="+977".$row1['phone'];//Get the users phone also add the country code(which can be done in sendSms() if required)
 					sendSms("Your Gym Period will expire tomorrow",$phone,"GymNepal");//Call the function to send sms
+
 				}
 			}
 		}
