@@ -15,8 +15,8 @@ function sendSms($message,$numbers,$sender) {
 	//We are using other apis so ,we do as they say
 	//Any modification in these codes may lead to feature faliure
 	//Consult the api website for more details
-	$username = "susuthapa19961227@yahoo.com";
-	$hash = "b418d80f9afd550e7d30f5f753fc358416d4546dbb2289ecd4399a63d8917a55";
+	$username = "buddharajshrestha999@gmail.com";
+	$hash = "9ff218c8388b357154241f4c71f07eb0eace0c4a4aa20b8e2329d0732f554d73";
 	// Config variables. Consult http://api.txtlocal.com/docs for more info.
 	$test = "0";
 	$message = urlencode($message);
