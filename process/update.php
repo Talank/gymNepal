@@ -1,23 +1,23 @@
 <?php
-session_start();
-$plan=$_POST['date'];
-$_SESSION['user_id']=$user_id=$_POST['user_id'];
-$_SESSION['due']=$dueAmount=$_POST['dueAmount'];
-//$_SESSION['amount']=$_POST['amount'];
-$amount=$_POST['amount'];
-$discount=$_POST['discount'];
-$tender=$_POST['tender'];
-$totalDue=$_POST['preDueAmount']+$_POST['dueAmount'];
-$firstname=$_POST['firstname'];
-$lastname=$_POST['lastname'];
-include "../pages/connect.php";
-	
-	   if(!(empty($firstname)) || !(empty($lastname))){
+	session_start();
+	$plan=$_POST['date'];
+	$_SESSION['user_id']=$user_id=$_POST['user_id'];
+	$_SESSION['due']=$dueAmount=$_POST['dueAmount'];
+	$amount=$_POST['amount'];
+	$discount=$_POST['discount'];
+	$tender=$_POST['tender'];
+	$totalDue=$_POST['preDueAmount']+$_POST['dueAmount'];
+	$firstname=$_POST['firstname'];
+	$lastname=$_POST['lastname'];
+	include "../pages/connect.php";
+	if(!(empty($firstname)) || !(empty($lastname))){
 		$query=mysqli_query($conn,"select due from duebalance where user_id=$user_id LIMIT 1");
 		if($query) {
 			$row=mysqli_fetch_array($query);
 			if(isset($_POST['cutPrevious'])) {
 				$amount+=$row['due'];
+			} else {
+				echo 'cutPrevious not set';
 			}
 		}
         $stmt2="select duedate from users where user_id=$user_id";
@@ -49,55 +49,13 @@ include "../pages/connect.php";
 				$query=mysqli_query($conn,"update duebalance set due=$totalDue where user_id =$user_id");
 				if($query) {
 					mysqli_query($conn,"insert into duebalance values ($user_id,$totalDue)");
-				if($query) {
-					$query=mysqli_query($conn,"insert into duebalance(user_id,due) values ($user_id,$totalDue)");
+					header("location:bill.php?amount=$amount&&discount=$discount&&tender=$tender");
 				}
-				header("location:bill.php?amount=$amount&&discount=$discount&&tender=$tender");
-			}
+			} 
 		} else {//Update user due amount and redirect to bill.php
 			$query=mysqli_query($conn,"update duebalance set due=$totalDue where user_id =$user_id");
 			header("location:bill.php?amount=$amount&&discount=$discount&&tender=$tender");
 		}
-	}
-		//Coding Redundancy
-		
-   /*     if($plan==0){
-          date_add($date,date_interval_create_from_date_string("0 months"));
-        }
-		else if ($plan == 1) {
-		  date_add($date,date_interval_create_from_date_string("1 months"));
-		}
-		else if($plan ==3){
-		  date_add($date,date_interval_create_from_date_string("3 months"));
-		}
-		else if($plan==6){
-		  date_add($date,date_interval_create_from_date_string("6 months"));
-		}
-		else{
-		  date_add($date,date_interval_create_from_date_string("12 months"));
-		}
-		echo $plan=date_format($date,"Y-m-d");*/
-		
-		//The following code is to be removed
-	/*	//if (!is_nan($dueAmount)) {
-			$stmt3="select * from duebalance where user_id =$user_id";
-			$result3=mysqli_query($conn,$stmt3);
-			$nums=mysqli_num_rows($result3);
-			
-			if ($nums>0)
-				$stmt4="update duebalance set due=due+$dueAmount where user_id =$user_id";
-				
-			else
-				$stmt4="insert into duebalance values ($user_id,$dueAmount)";
-				
-			
-			$result4=mysqli_query($conn,$stmt4);
-			if($result4){
-				header("location:bill.php?amount=$amount");
-			}*/
-		// }
-		// else
-		// 	echo "Due not a number";
 	}
 	else{
 		echo "not found";

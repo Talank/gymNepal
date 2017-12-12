@@ -29,4 +29,14 @@ function sendSms($message,$numbers,$sender) {
 	curl_close($ch);
 }
 
+function getCount($sql) {
+	include"../pages/connect.php";
+	$query=mysqli_query($conn,$sql);
+	if($query) {
+		return ((mysqli_fetch_object($query))->num);
+	} else {
+		return 0;
+	}
+}
+
 ?>
