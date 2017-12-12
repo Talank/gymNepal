@@ -2,13 +2,15 @@
 
 	include"../pages/connect.php";
 	include "functions.php";
-	$query=mysqli_query($conn,"select user_id,duedate from users");
+	$today=date('y-m-d');
+	$query=mysqli_query($conn,"select *,datediff('".$today."',duedate) as count from users");
 	if($query) {
-		$today=date_create(date('y-m-d',time()));//Get the current Date
+		echo 'inside query'.mysqli_affected_rows($conn);
 		while($row=mysqli_fetch_array($query)) {
-			$duedate=date_create($row['duedate']);//Get the due date
 			$user_id=$row['user_id'];//Get the user_id
-			if((date_diff($duedate,$today))->format("%R%a")>1) {//Check if users is near expiry
+			if($row['count']>1) {//We are simply checking the count
+				//This will send multiple sms ,so prevent this extra info should be stored in database
+				//about the users that have already been sent sms
 				$query1=mysqli_query($conn,"select phone from information where user_id=$user_id Limit 1");
 				if($query1) {
 					$row1=mysqli_fetch_array($query1);
@@ -17,5 +19,7 @@
 				}
 			}
 		}
+	} else {
+		echo mysqli_error($conn);
 	}	
 ?>
