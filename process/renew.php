@@ -29,7 +29,7 @@
 	<div class="container">
 	<div class="jumbotron">
 		<form action="update.php" class="" method="post">
-		<img src="../Images/<?php echo $row['picture'];?>" class="img-rounded center-block">
+		<img src="../Images/<?php echo $row['picture'];?>" class="img-rounded center-block" width=200 height=200>
 	<div class="alert alert-info text-center">
 		<div class="row">
 			<label>REGISTRATION ID: <?php echo $_GET['id'];?></label>
