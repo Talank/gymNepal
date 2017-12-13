@@ -21,7 +21,124 @@
 <html>
 <head>
 	<title>Bill</title>
-	<link rel="stylesheet" type="text/css" href="../css/bill.css">
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+	
+
+
+</head>
+<body>
+	<div class="well">
+		<h3 class="text-center">BILLING TERMINAL</h3>
+	</div>
+	<div class="jumbotron text-center">
+		<img src=../Images/bullsgym.jpg width="80" height="80" class="img-rounded" alt="Bulls Gyms">
+		<div  align="center"><p>Bulls Gym Association,Nayabazar</p></div>
+		<div class="row">
+			<div class="col-lg-6 col-lg-offset-3">
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						Reciept
+					</div>
+					<div class="panel-body">
+						<div class="table-responsive">
+							<table class="table">
+								<tr>
+									<td>
+										Name
+									</td>
+									<td class="text-left">
+										<b><?php echo $row['firstname']." ". $row['lastname']; ?></b>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										Registration id
+									</td>
+									<td  class="text-left">
+										<b><?php echo $row['user_id']; ?></b>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										Date of payment
+									</td>
+									<td class="text-left">
+										<b><?php echo date("Y-m-d");?></b>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										Status
+									</td>
+									<td  class="text-left">
+										<b><?php $msg=($due>0)?"not cleared":"clear"; echo $msg;   ?></b>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										Amount To Be Paid:
+									</td>
+									<td class="text-left">
+										Rs:<b><?php echo $_GET['amount'];?></b>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										Due amount
+									</td>
+									<td class="text-left">
+										Rs:<b><?php echo $due;?></b>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										Net Amount
+									</td>
+									<td class="text-left">
+										Rs:<b><?php echo ($_GET['amount']-$_GET['amount']*0.01*$_GET['discount']);?></b>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										Tender
+									</td>
+									<td class="text-left">
+										Rs:<b><?php echo $_GET['tender'];?></b>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										Return
+									</td>
+									<td class="text-left">
+										Rs:<b><?php if($_GET['tender']<=$_GET['amount']) echo "0"; else echo ($_GET['tender']-($_GET['amount']-$_GET['amount']*0.01*$_GET['discount']));?></b>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										Signature
+									</td>
+									<td class="text-left">
+										<b>-----------</b>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+				
+		</div>
+			</div>
+			
+		</div>
+		<div class="text-center">
+			<button class="btn btn-primary" onclick="printPage()" id="print">print</button>
+			<a href="destroy_session.php"><button class="btn btn-danger" id="back">back</button></a>
+		</div>
+		
+	</div>
+
+
+
 	<script language=javascript>
 		function printPage() {
 			document.getElementById("back").style.visibility="hidden";
@@ -31,32 +148,6 @@
 		  window.print(); 
 		  }
 		}
-</script>
-
-</head>
-<body bg-color="#FAFAFA">
-<h1 align="center">Bill</h1>
-<h2><img src=../Images/bullsgym.jpg width="80" height="80"> </h2>
-<div  align="center"><p id="p1">Bulls Gym Association,Nayabazar</p></div>
-<div id="div1">
-	<h3>Reciept</h3>
-	
-     	
-<p class="p2">Name-<b><?php echo $row['firstname']." ". $row['lastname']; ?></b></p>
-<p class="p2">Registration id- <b><?php echo $row['user_id']; ?> </b> </p>
-<p class="p2">Date of payment-<b><?php echo date("Y-m-d");?></b></p>
-<p class="p2">Status- <b><?php $msg=($due>0)?"not cleared":"clear"; echo $msg;   ?></b></p>
-<p class="p2">Amount To Be Paid:<b> Rs. <?php echo $_GET['amount'];?></b>
-<p class="p2">Discount:<b><?php echo $_GET['discount']."%";?></b>
-<p class="p2">Due amount:<b>Rs.<?php echo $due;?></b></p>	
-<p class="p2">Net Amount:<b> Rs. <?php echo ($_GET['amount']-$_GET['amount']*0.01*$_GET['discount']);?></b>
-<p class="p2">Tender:<b>Rs.<?php echo $_GET['tender'];?></b></p>	
-<p class="p2">Return:<b>Rs.<?php if($_GET['tender']<=$_GET['amount']) echo "0"; else echo ($_GET['tender']-($_GET['amount']-$_GET['amount']*0.01*$_GET['discount']));?></b></p>	
-<p class="p2">Signature-<span style="text-decoration: underline; white-space: pre;">                  </span></p>
-<button onclick="printPage()" id="print">print</button>
-<a href="destroy_session.php"><button id="back">back</button></a>
-
-	
-</div>
+	</script>
 </body>
-</html>
+

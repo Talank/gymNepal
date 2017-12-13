@@ -49,15 +49,17 @@
 				$query=mysqli_query($conn,"update duebalance set due=$totalDue where user_id =$user_id");
 				if($query) {
 					mysqli_query($conn,"insert into duebalance values ($user_id,$totalDue)");
-					header("location:bill.php?amount=$amount&&discount=$discount&&tender=$tender");
 				}
 			} 
 		} else {//Update user due amount and redirect to bill.php
 			$query=mysqli_query($conn,"update duebalance set due=$totalDue where user_id =$user_id");
-			header("location:bill.php?amount=$amount&&discount=$discount&&tender=$tender");
+			
 		}
-	}
-	else{
+		if($totalDue==0) {//Check if the total due is cleared or not
+			$query=mysqli_query($conn,"delete from duebalance where user_id=$user_id");
+		}
+		header("location:bill.php?amount=$amount&&discount=$discount&&tender=$tender");
+	} else{
 		echo "not found";
 	}
 ?>
