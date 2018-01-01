@@ -2,10 +2,10 @@
 session_start();
 if(isset($_SESSION['username'])){
 	include "functions.php";
-	$count=getCount("select user_id from users");
-	$pending=getCount("select user_id from pending");
+	$count=getCount("select count(user_id) as num from users");
+	$pending=getCount("select count(user_id) as num from pending");
 	$active=$count-$pending;
-	$dueNo=getCount("select user_id from duebalance where due>0");
+	$dueNo=getCount("select count(user_id) as num from duebalance where due>0");
 }
 else{
 	header("location:../index.html");

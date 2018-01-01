@@ -33,7 +33,7 @@ function getCount($sql) {
 	include"../pages/connect.php";
 	$query=mysqli_query($conn,$sql);
 	if($query) {
-		return mysqli_num_rows($query);
+		return mysqli_fetch_object($query)->num;
 	} else {
 		return 0;
 	}
