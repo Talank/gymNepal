@@ -6,7 +6,7 @@ if(isset($_SESSION['username'])){
 	$count=getCount("select count(user_id) as num from users");
 	$pending=getCount("select count(user_id) as num from pending");
 	$active=$count-$pending;
-	$dueNo=getCount("select count(user_id) as num from duebalance");
+	$dueNo=getCount("select count(user_id) as num from duebalance where due>0");
 }
 else{
 	header("location:../index.html");
