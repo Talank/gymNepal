@@ -24,7 +24,7 @@ else{
     <title>Bulls gym</title>
 
     
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="../css/custom_search.css">
     <link href="../css/form.css" rel="stylesheet">
     <link href="../css/dashboard.css" rel="stylesheet">
@@ -217,8 +217,8 @@ else{
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
 	
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	<script src ="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+     <script src="../javascript/jquery.min.js"></script>
+    	<script src ="../javascript/bootstrap.min.js"></script>
 	<script type="text/javascript" src="../java4.js"></script>
 	<script type="text/javascript" src="../javascript/form.js"></script>
 
