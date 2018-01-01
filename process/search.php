@@ -84,7 +84,7 @@ else{
           <div class="row placeholders">
             <div class="col-xs-6 col-sm-3 placeholder">
               <div id="checking">
-              <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+              <img src="../images/download.gif" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
               <div id="centers">
                 <h3><?php echo $count;?></h3>
               </div>
@@ -93,7 +93,7 @@ else{
               <span class="text-muted">Total Number of Users</span>
             </div>
             <div class="col-xs-6 col-sm-3 placeholder">
-              <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+              <img src="../images/download.gif" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
               <div id="centers">
                 <h3><?php echo $pending;?></h3>
               </div>
@@ -101,7 +101,7 @@ else{
               <span class="text-muted">Total No of Pending Users</span>
             </div>
             <div class="col-xs-6 col-sm-3 placeholder">
-              <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+              <img src="../images/download.gif" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
               <div id="centers">
                 <h3><?php echo $active;?></h3>
               </div>
@@ -109,7 +109,7 @@ else{
               <span class="text-muted">Total No Of Active Users</span>
             </div>
             <div class="col-xs-6 col-sm-3 placeholder">
-              <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+              <img src="../images/download.gif" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
               <div id="centers">
                 <h3><?php echo $dueNo;?></h3>
               </div>
