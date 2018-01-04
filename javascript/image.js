@@ -1,3 +1,0 @@
-function myfunc(){
-	alert("yes");
-}
